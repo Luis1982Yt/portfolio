@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luís Antônio — Programador e editor de vídeo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1726;        /* azul-noite, fundo de timeline */
+    --panel:#17223A;
+    --line:#26334F;
+    --text:#E9EDF5;
+    --muted:#98A3BC;
+    --site:#2BB3A3;      /* trilha: sites */
+    --app:#8E7CF6;       /* trilha: apps */
+    --video:#F2B33D;     /* trilha: vídeos */
+    --play:#FF5A5F;      /* playhead */
+    --display:'Bricolage Grotesque',system-ui,sans-serif;
+    --body:'Manrope',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--video);outline-offset:3px;border-radius:4px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* Cabeçalho */
+  header{position:sticky;top:0;z-index:10;background:rgba(15,23,38,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .logo{font-family:var(--display);font-weight:700;font-size:1.1rem;text-decoration:none}
+  nav{display:flex;gap:22px;font-size:.95rem}
+  nav a{text-decoration:none;color:var(--muted)}
+  nav a:hover{color:var(--text)}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--text);color:var(--bg);font-weight:700;text-decoration:none;padding:10px 18px;border-radius:999px;font-size:.95rem;white-space:nowrap}
+  .btn:hover{background:#fff}
+  .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+  .btn.ghost:hover{border-color:var(--muted)}
+
+  /* Hero */
+  .hero{padding:88px 0 56px}
+  .hero h1{font-family:var(--display);font-weight:800;font-size:clamp(3rem,9vw,6.6rem);line-height:.95;letter-spacing:-.03em}
+  .hero p.lead{margin-top:22px;font-size:clamp(1.1rem,2.2vw,1.35rem);color:var(--muted);max-width:36ch}
+  .hero p.lead strong{color:var(--text);font-weight:600}
+  .hero .actions{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+
+  /* Timeline */
+  .timeline{margin-top:64px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px 18px;position:relative;overflow:hidden}
+  .ruler{display:grid;grid-template-columns:repeat(8,1fr);margin-left:92px;font-size:.72rem;color:var(--muted);font-variant-numeric:tabular-nums;border-bottom:1px solid var(--line);padding-bottom:6px;margin-bottom:10px}
+  .track{display:flex;align-items:center;gap:12px;height:46px}
+  .track + .track{margin-top:8px}
+  .track .name{width:80px;flex:none;font-size:.82rem;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:8px}
+  .track .name i{width:8px;height:8px;border-radius:2px;display:block}
+  .lane{position:relative;flex:1;height:100%;background:rgba(255,255,255,.025);border-radius:6px}
+  .clip{position:absolute;top:4px;bottom:4px;border-radius:6px;display:flex;align-items:center;padding:0 12px;font-size:.86rem;font-weight:700;color:#0F1726;text-decoration:none;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;transition:filter .15s}
+  .clip:hover{filter:brightness(1.12)}
+  .clip.site{background:var(--site)}
+  .clip.app{background:var(--app)}
+  .clip.video{background:var(--video);background-image:repeating-linear-gradient(90deg,rgba(15,23,38,.18) 0 2px,transparent 2px 22px)}
+  .playhead{position:absolute;top:8px;bottom:8px;left:108px;width:2px;background:var(--play);pointer-events:none;animation:sweep 3.2s cubic-bezier(.5,0,.3,1) .4s both}
+  .playhead::before{content:"";position:absolute;top:-2px;left:-6px;border:7px solid transparent;border-top:9px solid var(--play)}
+  @keyframes sweep{from{left:108px}to{left:calc(100% - 24px)}}
+
+  /* Seções */
+  section.block{padding:96px 0 0}
+  .sec-head{display:grid;grid-template-columns:auto 1fr;align-items:baseline;column-gap:14px;row-gap:8px;margin-bottom:36px}
+  .sec-head i{width:12px;height:12px;border-radius:3px;display:block;transform:translateY(-3px)}
+  .sec-head h2{font-family:var(--display);font-weight:700;font-size:clamp(2rem,4.5vw,2.9rem);letter-spacing:-.02em;line-height:1.05}
+  .sec-head p{color:var(--muted);grid-column:1/-1;max-width:60ch}
+
+  .grid{display:grid;gap:28px}
+  .grid.three{grid-template-columns:repeat(3,1fr)}
+  .grid.two{grid-template-columns:repeat(2,1fr)}
+
+  .work h3{font-family:var(--display);font-weight:700;font-size:1.4rem;margin-top:16px}
+  .work p{color:var(--muted);margin-top:6px;font-size:.98rem}
+  .work .tags{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+  .work .tags span{font-size:.78rem;font-weight:600;padding:3px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+  .work a.more{display:inline-block;margin-top:14px;font-weight:700;font-size:.95rem;text-underline-offset:4px}
+
+  /* Moldura de navegador (prévia de site) */
+  .browser{border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#fff;aspect-ratio:16/11}
+  .browser .bar{height:26px;background:#E6E9EF;display:flex;align-items:center;gap:5px;padding:0 10px}
+  .browser .bar b{width:8px;height:8px;border-radius:50%;background:#C3C8D2;display:block}
+  .browser .shot{height:calc(100% - 26px);display:grid;place-items:center;color:#5B6478;font-size:.85rem;text-align:center;padding:16px}
+  .shot.s1{background:linear-gradient(160deg,#E3F5F2 0%,#FFFFFF 70%)}
+  .shot.s2{background:linear-gradient(160deg,#EAF0FB 0%,#FFFFFF 70%)}
+  .shot.s3{background:linear-gradient(160deg,#F6EEE4 0%,#FFFFFF 70%)}
+
+  /* Apps */
+  .app-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px;display:flex;flex-direction:column}
+  .app-card .screen{border-radius:10px;background:#0B1220;border:1px solid var(--line);aspect-ratio:16/9;display:grid;place-items:center;color:var(--muted);font-size:.85rem}
+  .app-card.featured .screen{background:linear-gradient(150deg,rgba(142,124,246,.25),rgba(142,124,246,.04))}
+  .app-card h3{margin-top:22px}
+
+  /* Vídeos */
+  .videos{display:grid;grid-template-columns:2fr 1fr;gap:20px}
+  .videos .side{display:grid;gap:20px}
+  .vid{position:relative;display:block;border-radius:12px;overflow:hidden;aspect-ratio:16/9;background:linear-gradient(135deg,#2A2140,#14203A);border:1px solid var(--line);text-decoration:none}
+  .vid .play{position:absolute;inset:0;display:grid;place-items:center}
+  .vid .play span{width:64px;height:64px;border-radius:50%;background:var(--video);display:grid;place-items:center;transition:transform .15s}
+  .vid:hover .play span{transform:scale(1.08)}
+  .vid .play svg{margin-left:4px}
+  .vid .cap{position:absolute;left:14px;bottom:12px;right:14px;font-weight:700;font-size:.92rem;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+  .side .vid .play span{width:46px;height:46px}
+  .channel{margin-top:22px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted)}
+  .channel strong{color:var(--text)}
+
+  /* Serviços */
+  .services{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+  .service{padding:32px 28px 32px 0;border-bottom:1px solid var(--line)}
+  .service + .service{padding-left:28px;border-left:1px solid var(--line)}
+  .service h3{font-family:var(--display);font-weight:700;font-size:1.35rem;display:flex;align-items:center;gap:10px}
+  .service h3 i{width:10px;height:10px;border-radius:2px;display:block}
+  .service p{color:var(--muted);margin-top:10px;font-size:.98rem}
+  .service ul{margin-top:14px;list-style:none;display:grid;gap:6px;font-size:.95rem}
+  .service li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--muted);margin-right:10px;transform:translateY(-2px)}
+
+  /* Contato */
+  .contact{margin:110px 0 0;padding:64px 0 72px;border-top:1px solid var(--line)}
+  .contact h2{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,6vw,4rem);letter-spacing:-.025em;line-height:1}
+  .contact p{color:var(--muted);margin-top:16px;max-width:46ch}
+  .contact .rows{margin-top:36px;display:grid;gap:0;max-width:640px}
+  .contact .row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);text-decoration:none;flex-wrap:wrap}
+  .contact .row span{color:var(--muted);font-size:.9rem}
+  .contact .row strong{font-size:1.15rem}
+  .contact .row:hover strong{color:var(--video)}
+  footer{color:var(--muted);font-size:.85rem;padding:0 0 40px}
+
+  /* Responsivo */
+  @media (max-width:900px){
+    nav{display:none}
+    .grid.three,.services{grid-template-columns:1fr}
+    .grid.two,.videos{grid-template-columns:1fr}
+    .service,.service + .service{padding:28px 0;border-left:none}
+    .ruler{display:none}
+    .track .name{width:56px;font-size:.75rem}
+    .clip{font-size:.74rem;padding:0 8px}
+    .playhead{left:84px}
+    @keyframes sweep{from{left:84px}to{left:calc(100% - 20px)}}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .playhead{animation:none;left:62%}
+  }
+
+  .browser{display:block;text-decoration:none;aspect-ratio:auto}
+  .browser img{display:block;width:100%;aspect-ratio:16/11;object-fit:cover;object-position:top center}
+  .browser .bar small{margin-left:10px;font-size:.72rem;color:#5B6478;background:#fff;border-radius:4px;padding:1px 8px;flex:1;max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .browser:hover img{filter:brightness(1.05)}
+  .app-card .screen img{height:100%;width:auto;display:block;margin:0 auto}
+  .app-card .screen{overflow:hidden;padding-top:14px}
+  .screen.jarvis{display:flex;align-items:center;justify-content:center;gap:7px;background:radial-gradient(circle at 50% 50%,rgba(142,124,246,.22),#0B1220 65%)}
+  .screen.jarvis span{width:6px;border-radius:3px;background:var(--app);animation:wave 1.4s ease-in-out infinite}
+  .screen.jarvis span:nth-child(1){height:18px;animation-delay:0s}
+  .screen.jarvis span:nth-child(2){height:34px;animation-delay:.1s}
+  .screen.jarvis span:nth-child(3){height:56px;animation-delay:.2s}
+  .screen.jarvis span:nth-child(4){height:72px;animation-delay:.3s}
+  .screen.jarvis span:nth-child(5){height:56px;animation-delay:.4s}
+  .screen.jarvis span:nth-child(6){height:34px;animation-delay:.5s}
+  .screen.jarvis span:nth-child(7){height:18px;animation-delay:.6s}
+  @keyframes wave{0%,100%{transform:scaleY(.5)}50%{transform:scaleY(1)}}
+  .channel-card{aspect-ratio:21/8;background:linear-gradient(120deg,#3A2A12 0%,#1B2440 60%);}
+  .channel-card .cap{font-weight:500;font-size:1rem;max-width:52ch;color:var(--text)}
+  .channel-card .cap strong{font-family:var(--display);font-size:1.6rem;font-weight:700}
+  @media (max-width:900px){.channel-card{aspect-ratio:4/3}}
+  @media (prefers-reduced-motion:reduce){.screen.jarvis span{animation:none}}
+
+  .vid.yt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .vid.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#topo">Luís Antônio</a>
+    <nav aria-label="Seções">
+      <a href="#sites">Sites</a>
+      <a href="#apps">Apps</a>
+      <a href="#videos">Vídeos</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn" href="https://wa.me/5551995837188">Chamar no WhatsApp</a>
+  </div>
+</header>
+
+<main id="topo">
+  <section class="hero">
+    <div class="wrap">
+      <h1>Luís Antônio</h1>
+      <p class="lead"><strong>Programador e editor de vídeo.</strong> Faço sites, sistemas e vídeos para empresas e criadores de conteúdo.</p>
+      <div class="actions">
+        <a class="btn" href="https://wa.me/5551995837188">Pedir um orçamento</a>
+        <a class="btn ghost" href="#sites">Ver trabalhos</a>
+      </div>
+
+      <!-- Timeline: cada clipe leva para um trabalho -->
+      <div class="timeline" aria-label="Linha do tempo com os trabalhos">
+        <div class="ruler" aria-hidden="true">
+          <span>00:00</span><span>00:05</span><span>00:10</span><span>00:15</span><span>00:20</span><span>00:25</span><span>00:30</span><span>00:35</span>
+        </div>
+        <div class="track">
+          <div class="name"><i style="background:var(--site)"></i>Sites</div>
+          <div class="lane">
+            <a class="clip site" href="#sites" style="left:0;width:42%">Confortize</a>
+            <a class="clip site" href="#sites" style="left:43%;width:40%">BattleMatch</a>
+          </div>
+        </div>
+        <div class="track">
+          <div class="name"><i style="background:var(--app)"></i>Apps</div>
+          <div class="lane">
+            <a class="clip app" href="#apps" style="left:8%;width:44%">App Confortize</a>
+            <a class="clip app" href="#apps" style="left:54%;width:32%">Jarvis</a>
+          </div>
+        </div>
+        <div class="track">
+          <div class="name"><i style="background:var(--video)"></i>Vídeos</div>
+          <div class="lane">
+            <a class="clip video" href="#videos" style="left:0;width:97%">Vídeos do canal Duduhh</a>
+          </div>
+        </div>
+        <div class="playhead" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITES -->
+  <section class="block" id="sites">
+    <div class="wrap">
+      <div class="sec-head">
+        <i style="background:var(--site)"></i>
+        <h2>Sites</h2>
+        <p>Sites rápidos, que funcionam bem no celular e levam o cliente direto pro WhatsApp.</p>
+      </div>
+      <div class="grid two">
+        <article class="work">
+          <a class="browser" href="https://confortosistemadeseguranca.com.br/"><div class="bar"><b></b><b></b><b></b><small>confortosistemadeseguranca.com.br</small></div><img src="confortize-site.jpg" alt="Página inicial do Confortize"></a>
+          <h3>Confortize</h3>
+          <p>Página de vendas do Confortize: mostra as funções do sistema, os planos e o teste grátis de 7 dias para empresas de segurança eletrônica.</p>
+          <a class="more" href="https://confortosistemadeseguranca.com.br/">Ver site</a>
+        </article>
+        <article class="work">
+          <a class="browser" href="https://battlematch.vercel.app/"><div class="bar"><b></b><b></b><b></b><small>battlematch.vercel.app</small></div><img src="battlematch.jpg" alt="Tela de escolha de campeão do BattleMatch"></a>
+          <h3>BattleMatch</h3>
+          <p>Guia de matchups de League of Legends: você escolhe seu campeão e o inimigo e vê as dicas, runas e itens para o confronto.</p>
+          <a class="more" href="https://battlematch.vercel.app/">Ver site</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPS -->
+  <section class="block" id="apps">
+    <div class="wrap">
+      <div class="sec-head">
+        <i style="background:var(--app)"></i>
+        <h2>Apps e sistemas</h2>
+        <p>Ferramentas feitas sob medida para resolver um problema real do dia a dia.</p>
+      </div>
+      <div class="grid two">
+        <article class="work app-card featured">
+          <div class="screen"><img src="confortize-app.jpg" alt="Tela de pedido do app Confortize no celular"></div>
+          <h3>App Confortize</h3>
+          <p>Pedido, orçamento, ordem de serviço e agenda no celular, para quem instala câmeras e alarmes. O técnico fala o pedido e a IA preenche o resto; o cliente aprova o orçamento por link e paga no Pix.</p>
+          <div class="tags"><span>IA</span><span>WhatsApp</span><span>Pix</span></div>
+          <a class="more" href="https://confortosistemadeseguranca.com.br/">Testar o app</a>
+        </article>
+        <article class="work app-card">
+          <div class="screen jarvis" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <h3>Jarvis</h3>
+          <p>Assistente pessoal com inteligência artificial, no estilo do Jarvis do Homem de Ferro. Em versão beta.</p>
+          <div class="tags"><span>IA</span><span>Em desenvolvimento</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- VÍDEOS -->
+  <section class="block" id="videos">
+    <div class="wrap">
+      <div class="sec-head">
+        <i style="background:var(--video)"></i>
+        <h2>Edição de vídeo</h2>
+        <p>Editor dos vídeos do canal Duduhh, de League of Legends.</p>
+      </div>
+      <div class="videos">
+        <a class="vid yt" data-id="QN0qjFNkLDg" href="https://youtu.be/QN0qjFNkLDg">
+          <img alt="" src="https://i.ytimg.com/vi/QN0qjFNkLDg/hqdefault.jpg" onload="this.parentNode.classList.add('ok')" onerror="this.remove()">
+          <div class="play"><span><svg width="22" height="24" viewBox="0 0 22 24" aria-hidden="true"><path d="M0 0l22 12L0 24z" fill="#0F1726"/></svg></span></div>
+        </a>
+        <div class="side">
+          <a class="vid yt" data-id="y_KDUZb8b0A" href="https://youtu.be/y_KDUZb8b0A">
+          <img alt="" src="https://i.ytimg.com/vi/y_KDUZb8b0A/hqdefault.jpg" onload="this.parentNode.classList.add('ok')" onerror="this.remove()">
+          <div class="play"><span><svg width="16" height="18" viewBox="0 0 22 24" aria-hidden="true"><path d="M0 0l22 12L0 24z" fill="#0F1726"/></svg></span></div>
+        </a>
+          <a class="vid yt" data-id="0m6DPpojPng" href="https://youtu.be/0m6DPpojPng">
+          <img alt="" src="https://i.ytimg.com/vi/0m6DPpojPng/hqdefault.jpg" onload="this.parentNode.classList.add('ok')" onerror="this.remove()">
+          <div class="play"><span><svg width="16" height="18" viewBox="0 0 22 24" aria-hidden="true"><path d="M0 0l22 12L0 24z" fill="#0F1726"/></svg></span></div>
+        </a>
+        </div>
+      </div>
+      <div class="channel">
+        <span>Vídeos do canal <strong>Duduhh</strong>, de League of Legends.</span>
+        <a class="btn ghost" href="https://www.youtube.com/@Duduhhlol1">Ver o canal no YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="block" id="servicos">
+    <div class="wrap">
+      <div class="sec-head">
+        <i style="background:var(--text)"></i>
+        <h2>O que eu faço por você</h2>
+      </div>
+      <div class="services">
+        <div class="service">
+          <h3><i style="background:var(--site)"></i>Sites</h3>
+          <p>Para negócios que querem aparecer no Google e receber clientes pelo WhatsApp.</p>
+          <ul><li>Site de uma página ou completo</li><li>Feito para celular</li><li>Domínio e hospedagem</li></ul>
+        </div>
+        <div class="service">
+          <h3><i style="background:var(--app)"></i>Sistemas</h3>
+          <p>Para empresas que perdem tempo com planilha e trabalho manual.</p>
+          <ul><li>Geradores de orçamento</li><li>Cadastros e controles</li><li>Automações com IA</li></ul>
+        </div>
+        <div class="service">
+          <h3><i style="background:var(--video)"></i>Vídeos</h3>
+          <p>Para criadores e empresas que precisam de vídeo bem editado.</p>
+          <ul><li>Vídeos para YouTube</li><li>Cortes para Reels e TikTok</li><li>Legendas e efeitos</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE: a fazer depois -->
+
+  <!-- CONTATO -->
+  <section class="contact" id="contato">
+    <div class="wrap">
+      <h2>Vamos conversar?</h2>
+      <p>Me conta o que você precisa e eu te respondo com uma ideia e um orçamento.</p>
+      <div class="rows">
+        <a class="row" href="https://wa.me/5551995837188"><span>WhatsApp</span><strong>(51) 99583-7188</strong></a>
+        <a class="row" href="mailto:luiskoch7@gmail.com"><span>E-mail</span><strong>luiskoch7@gmail.com</strong></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Luís Antônio, Portão-RS</div>
+</footer>
+
+<script>
+  // Toca o vídeo dentro da página quando as imagens do YouTube carregam (site publicado).
+  // Se o YouTube estiver bloqueado, o clique abre o vídeo no YouTube.
+  document.querySelectorAll('.vid.yt').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(!a.classList.contains('ok')) return;
+      e.preventDefault();
+      var f=document.createElement('iframe');
+      f.src='https://www.youtube-nocookie.com/embed/'+a.dataset.id+'?autoplay=1';
+      f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen=true; f.title='Vídeo do canal Duduhh';
+      var box=document.createElement('div'); box.className='vid'; box.appendChild(f);
+      a.replaceWith(box);
+    });
+  });
+</script>
+</body>
+</html>
