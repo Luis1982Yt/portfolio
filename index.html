@@ -206,72 +206,6 @@
         <a class="btn btn-ghost" href="#trabalhos">Ver trabalhos</a>
       </div>
 
-      <div class="ba">
-        <div class="ba-head">
-          <span>Arraste para comparar o mesmo negócio com um site antigo e com um site novo.</span>
-          <span>Negócio fictício, só para exemplo.</span>
-        </div>
-        <div class="frame">
-          <div class="chrome" aria-hidden="true"><b></b><b></b><b></b><span>vidracariahorizonte.com.br</span></div>
-          <div class="stage" id="stage">
-            <!-- Antes -->
-            <div class="pane old" aria-hidden="true">
-              <div class="box">
-                <h3>Bem-Vindo a Vidraçaria Horizonte!!!</h3>
-                <div class="mq">*** PROMOÇÃO DE BOX PARA BANHEIRO *** LIGUE JÁ *** PROMOÇÃO ***</div>
-                <p>Trabalhamos com vidros em geral a mais de 15 anos. Clique <a>AQUI</a> para ver nossos produtos.</p>
-                <table class="tbl"><tr><td><a>Empresa</a></td><td><a>Produtos</a></td><td><a>Fotos</a></td><td><a>Contato</a></td></tr></table>
-                <p>Telefone: (51) 3xxx-xxxx &nbsp;|&nbsp; Fax: (51) 3xxx-xxxx</p>
-                <p>Você é o visitante número <span class="counter">004187</span></p>
-                <small>Site melhor visualizado em 800x600 no Internet Explorer 6.<br>© 2009 Todos os direitos reservados.</small>
-              </div>
-            </div>
-            <!-- Depois -->
-            <div class="pane new" id="newPane" aria-hidden="true">
-              <div class="n-nav">
-                <span class="n-logo"><i></i>Horizonte Vidros</span>
-                <span class="n-menu"><span>Box</span><span>Espelhos</span><span>Sacadas</span><span>Projetos</span></span>
-                <span class="n-wa">WhatsApp</span>
-              </div>
-              <div class="n-body">
-                <div class="n-photo">
-                  <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
-                    <defs>
-                      <linearGradient id="gl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".5" stop-color="#fff" stop-opacity=".12"/><stop offset="1" stop-color="#fff" stop-opacity=".35"/></linearGradient>
-                      <linearGradient id="fl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B3A44"/><stop offset="1" stop-color="#06252C"/></linearGradient>
-                    </defs>
-                    <rect x="0" y="300" width="400" height="100" fill="url(#fl)"/>
-                    <rect x="70" y="40" width="10" height="270" rx="3" fill="#C9D3D5"/>
-                    <rect x="320" y="40" width="10" height="270" rx="3" fill="#C9D3D5"/>
-                    <rect x="70" y="36" width="260" height="8" rx="3" fill="#C9D3D5"/>
-                    <rect x="82" y="46" width="118" height="262" fill="url(#gl)" stroke="#E6F2F3" stroke-opacity=".7"/>
-                    <rect x="200" y="46" width="118" height="262" fill="url(#gl)" stroke="#E6F2F3" stroke-opacity=".7"/>
-                    <path d="M100 70 L170 140 M110 110 L150 150 M220 70 L290 140 M230 110 L270 150" stroke="#fff" stroke-opacity=".7" stroke-width="5" stroke-linecap="round"/>
-                    <rect x="192" y="160" width="6" height="60" rx="3" fill="#E6F2F3"/>
-                    <circle cx="260" cy="90" r="14" fill="#C9D3D5" opacity=".9"/>
-                    <path d="M260 104 v40" stroke="#C9D3D5" stroke-width="4" opacity=".6" stroke-dasharray="2 8" stroke-linecap="round"/>
-                  </svg>
-                  <div class="n-review"><b>★★★★★</b><q>Ficou perfeito, instalaram no prazo.</q><span>Ana, cliente em Portão</span></div>
-                </div>
-                <div class="n-copy">
-                  <span class="n-tag">Portão e região</span>
-                  <h3>Box, espelhos e sacadas sob medida</h3>
-                  <p>Medição grátis na sua casa e orçamento na hora pelo WhatsApp.</p>
-                  <div class="n-cta"><span class="p">Pedir orçamento</span><span class="s">Ver projetos</span></div>
-                  <div class="n-stats">
-                    <div><strong>15 anos</strong><span>de experiência</span></div>
-                    <div><strong>4,9 ★</strong><span>no Google</span></div>
-                    <div><strong>7 dias</strong><span>para instalar</span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="labels" aria-hidden="true"><span>Antes</span><span>Depois</span></div>
-            <input type="range" id="cut" min="0" max="100" value="50" aria-label="Comparar site antigo e site novo">
-            <div class="handle" aria-hidden="true"></div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -373,16 +307,8 @@
 </main>
 
 <footer>
-  <div class="wrap">© 2026 Luís Antônio, Portão-RS</div>
+  <div class="wrap">© 2026 Luís Antônio, Estância Velha-RS</div>
 </footer>
 
-<script>
-  (function(){
-    var stage=document.getElementById('stage'), range=document.getElementById('cut');
-    function set(v){stage.style.setProperty('--cut',v+'%');}
-    range.addEventListener('input',function(){set(range.value);});
-    set(range.value);
-  })();
-</script>
 </body>
 </html>
