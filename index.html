@@ -72,25 +72,36 @@
   .old small{display:block;margin-top:10px;font-size:12px;color:#555}
 
   /* "Depois": o mesmo negócio, hoje */
-  .new{background:var(--white);clip-path:inset(0 0 0 var(--cut,50%));display:grid;grid-template-columns:1fr 1fr}
-  .new .visual{order:0}
-  .new .copy{order:1}
-  .new .copy{padding:44px 40px;display:flex;flex-direction:column;justify-content:center}
-  .new .tag{font-size:.8rem;font-weight:600;color:var(--wa)}
-  .new h3{font-weight:900;font-size:2.4rem;line-height:1;letter-spacing:-.03em;margin-top:8px}
-  .new p{margin-top:12px;color:var(--ink-2);font-size:.98rem;max-width:34ch}
-  .new .row{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap}
-  .new .wa{background:var(--wa);color:#fff;font-weight:700;border-radius:999px;padding:10px 18px;font-size:.92rem}
-  .new .stars{font-size:.88rem;color:var(--ink-2);display:flex;align-items:center}
-  .new .visual{background:var(--mint);position:relative;overflow:hidden}
-  .new .visual svg{position:absolute;inset:0;width:100%;height:100%}
-
+  .new{--teal:#0E4A57;--teal-2:#14707F;--sand:#F5F1EA;background:var(--sand);clip-path:inset(0 0 0 var(--cut,50%));display:grid;grid-template-rows:auto 1fr;font-family:var(--font);color:#13262B}
+  .n-nav{display:flex;align-items:center;justify-content:space-between;padding:14px 26px;border-bottom:1px solid #E2DBCF;background:#fff}
+  .n-logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:.98rem;letter-spacing:-.01em}
+  .n-logo i{width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,var(--teal-2),var(--teal));display:block}
+  .n-menu{display:flex;gap:18px;font-size:.8rem;color:#4F6266}
+  .n-wa{background:#1F8F4E;color:#fff;font-weight:700;font-size:.78rem;padding:7px 13px;border-radius:999px}
+  .n-body{display:grid;grid-template-columns:1fr 1fr;min-height:0}
+  .n-photo{position:relative;overflow:hidden;background:radial-gradient(120% 90% at 30% 20%,#2C8C9A 0%,var(--teal) 55%,#08313A 100%)}
+  .n-photo svg{position:absolute;inset:0;width:100%;height:100%}
+  .n-review{position:absolute;right:18px;bottom:20px;background:#fff;border-radius:12px;padding:12px 14px;width:200px;box-shadow:0 12px 30px rgba(4,30,36,.35);font-size:.78rem;line-height:1.4}
+  .n-review b{color:#E9A100;letter-spacing:1px;font-size:.85rem}
+  .n-review q{display:block;margin:4px 0;font-weight:600;color:#13262B}
+  .n-review span{color:#6B7B7E}
+  .n-copy{padding:30px 34px;display:flex;flex-direction:column;justify-content:center}
+  .n-tag{align-self:flex-start;font-size:.74rem;font-weight:700;color:var(--teal-2);background:#E1EFEF;padding:4px 10px;border-radius:999px}
+  .n-copy h3{font-weight:900;font-size:2.15rem;line-height:1.02;letter-spacing:-.03em;margin-top:12px}
+  .n-copy p{margin-top:10px;color:#4F6266;font-size:.92rem;max-width:34ch}
+  .n-cta{margin-top:18px;display:flex;gap:8px;flex-wrap:wrap}
+  .n-cta span{font-weight:700;font-size:.85rem;padding:10px 16px;border-radius:999px}
+  .n-cta .p{background:var(--teal);color:#fff}
+  .n-cta .s{border:1.5px solid #C9D6D6;color:#13262B;background:#fff}
+  .n-stats{margin-top:22px;display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:22px;padding-top:16px;border-top:1px solid #E2DBCF}
+  .n-stats strong{display:block;font-weight:800;font-size:1.1rem;color:var(--teal)}
+  .n-stats span{font-size:.72rem;color:#6B7B7E}
   .handle{position:absolute;top:0;bottom:0;left:var(--cut,50%);width:0;pointer-events:none}
   .handle::before{content:"";position:absolute;top:0;bottom:0;left:-1px;width:3px;background:var(--blue)}
   .handle::after{content:"◀ ▶";position:absolute;top:50%;left:0;transform:translate(-50%,-50%);background:var(--blue);color:#fff;font-size:.7rem;letter-spacing:2px;padding:10px 12px;border-radius:999px;font-family:var(--font)}
   .stage input[type=range]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
   .stage input[type=range]:focus-visible + .handle::after{outline:3px solid var(--ink);outline-offset:2px}
-  .labels{position:absolute;top:12px;left:12px;right:12px;display:flex;justify-content:space-between;pointer-events:none}
+  .labels{position:absolute;bottom:12px;left:12px;right:12px;display:flex;justify-content:space-between;pointer-events:none}
   .labels span{background:var(--ink);color:#fff;font-size:.75rem;font-weight:700;padding:3px 10px;border-radius:999px}
 
   /* Seções */
@@ -157,9 +168,12 @@
     .steps{grid-template-columns:1fr 1fr}
     .also .wrap,.also .items{grid-template-columns:1fr}
     .stage{height:520px}
-    .new{grid-template-columns:1fr;grid-template-rows:1fr auto}
-    .new .copy{padding:28px 22px}
-    .new h3{font-size:1.9rem}
+    .n-menu{display:none}
+    .n-body{grid-template-columns:1fr;grid-template-rows:180px 1fr}
+    .n-copy{padding:20px 22px}
+    .n-copy h3{font-size:1.6rem}
+    .n-review{display:none}
+    .n-stats{gap:14px}
   }
   @media (max-width:520px){
     .steps{grid-template-columns:1fr}
@@ -214,19 +228,42 @@
             </div>
             <!-- Depois -->
             <div class="pane new" id="newPane" aria-hidden="true">
-              <div class="copy">
-                <span class="tag">Atendemos Portão e região</span>
-                <h3>Box, espelhos e sacadas sob medida</h3>
-                <p>Medição grátis, instalação em até 7 dias e orçamento na hora pelo WhatsApp.</p>
-                <div class="row"><span class="wa">Pedir orçamento</span><span class="stars">★★★★★ 4,9 no Google</span></div>
+              <div class="n-nav">
+                <span class="n-logo"><i></i>Horizonte Vidros</span>
+                <span class="n-menu"><span>Box</span><span>Espelhos</span><span>Sacadas</span><span>Projetos</span></span>
+                <span class="n-wa">WhatsApp</span>
               </div>
-              <div class="visual">
-                <svg viewBox="0 0 400 440" preserveAspectRatio="xMidYMid slice">
-                  <rect x="90" y="70" width="220" height="330" fill="#fff" stroke="#15181D" stroke-width="5"/>
-                  <path d="M200 70v330" stroke="#15181D" stroke-width="5"/>
-                  <path d="M120 110 L170 160 M130 150 L160 180 M230 110 L280 160 M240 150 L270 180" stroke="#2F45D8" stroke-width="5" stroke-linecap="round"/>
-                  <rect x="60" y="400" width="280" height="12" fill="#15181D"/>
-                </svg>
+              <div class="n-body">
+                <div class="n-photo">
+                  <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
+                    <defs>
+                      <linearGradient id="gl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".5" stop-color="#fff" stop-opacity=".12"/><stop offset="1" stop-color="#fff" stop-opacity=".35"/></linearGradient>
+                      <linearGradient id="fl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B3A44"/><stop offset="1" stop-color="#06252C"/></linearGradient>
+                    </defs>
+                    <rect x="0" y="300" width="400" height="100" fill="url(#fl)"/>
+                    <rect x="70" y="40" width="10" height="270" rx="3" fill="#C9D3D5"/>
+                    <rect x="320" y="40" width="10" height="270" rx="3" fill="#C9D3D5"/>
+                    <rect x="70" y="36" width="260" height="8" rx="3" fill="#C9D3D5"/>
+                    <rect x="82" y="46" width="118" height="262" fill="url(#gl)" stroke="#E6F2F3" stroke-opacity=".7"/>
+                    <rect x="200" y="46" width="118" height="262" fill="url(#gl)" stroke="#E6F2F3" stroke-opacity=".7"/>
+                    <path d="M100 70 L170 140 M110 110 L150 150 M220 70 L290 140 M230 110 L270 150" stroke="#fff" stroke-opacity=".7" stroke-width="5" stroke-linecap="round"/>
+                    <rect x="192" y="160" width="6" height="60" rx="3" fill="#E6F2F3"/>
+                    <circle cx="260" cy="90" r="14" fill="#C9D3D5" opacity=".9"/>
+                    <path d="M260 104 v40" stroke="#C9D3D5" stroke-width="4" opacity=".6" stroke-dasharray="2 8" stroke-linecap="round"/>
+                  </svg>
+                  <div class="n-review"><b>★★★★★</b><q>Ficou perfeito, instalaram no prazo.</q><span>Ana, cliente em Portão</span></div>
+                </div>
+                <div class="n-copy">
+                  <span class="n-tag">Portão e região</span>
+                  <h3>Box, espelhos e sacadas sob medida</h3>
+                  <p>Medição grátis na sua casa e orçamento na hora pelo WhatsApp.</p>
+                  <div class="n-cta"><span class="p">Pedir orçamento</span><span class="s">Ver projetos</span></div>
+                  <div class="n-stats">
+                    <div><strong>15 anos</strong><span>de experiência</span></div>
+                    <div><strong>4,9 ★</strong><span>no Google</span></div>
+                    <div><strong>7 dias</strong><span>para instalar</span></div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="labels" aria-hidden="true"><span>Antes</span><span>Depois</span></div>
