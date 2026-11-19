@@ -352,6 +352,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   });
   const fab = document.querySelector('.fab'), heroBtn = document.querySelector('.actions');
   new IntersectionObserver(([e]) => fab.classList.toggle('is-on', !e.isIntersecting && e.boundingClientRect.top < 0)).observe(heroBtn);
+  if (location.hash) addEventListener('load', () => { const t = document.querySelector(location.hash); if (t) t.scrollIntoView({behavior: 'instant'}); });
 })();
 </script>
 </body>
