@@ -15,7 +15,7 @@
 <meta property="og:image" content="share.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#e6dbc7">
+<meta name="theme-color" content="#f5f6f7">
 <!-- <link rel="canonical" href="https://[domínio da Real]/"> -->
 <meta name="robots" content="noindex">
 <meta name="site-kind" content="other">
@@ -34,10 +34,10 @@
 @font-face { font-family: "Nunito Sans"; font-weight: 500; font-display: swap; src: url(assets/fonts/nunito-sans-latin-500-normal.woff2) format("woff2"); }
 @font-face { font-family: "Nunito Sans"; font-weight: 600; font-display: swap; src: url(assets/fonts/nunito-sans-latin-600-normal.woff2) format("woff2"); }
 :root {
-  --p-bg: #e6dbc7; --p-surface: #ddd0b9; --p-ink: #062b8a; --p-muted: #3253a4;
-  --p-accent: #062b8a; --p-accent-ink: #e6dbc7; --p-action: #062b8a; --p-action-ink: #e6dbc7;
-  --p-inv-bg: #062b8a; --p-inv-surface: #153a90; --p-inv-ink: #e6dbc7; --p-inv-muted: #aab0bc;
-  --p-inv-accent: #e6dbc7; --p-inv-accent-ink: #062b8a; --p-inv-action: #e6dbc7; --p-inv-action-ink: #062b8a;
+  --p-bg: #f5f6f7; --p-surface: #e9edf1; --p-ink: #16202e; --p-muted: #4a5566;
+  --p-accent: #0b2f8a; --p-accent-ink: #f5f6f7; --p-action: #0b2f8a; --p-action-ink: #f5f6f7;
+  --p-inv-bg: #0b2f8a; --p-inv-surface: #1a3d96; --p-inv-ink: #f5f6f7; --p-inv-muted: #c3cde4;
+  --p-inv-accent: #f5f6f7; --p-inv-accent-ink: #0b2f8a; --p-inv-action: #f5f6f7; --p-inv-action-ink: #0b2f8a;
   --font-display: "Lora", Georgia, serif;
   --font-text: "Nunito Sans", system-ui, sans-serif;
   --display-weight: 400;
@@ -56,7 +56,8 @@
   #trabalhos .work > .frame { aspect-ratio: 4 / 3; margin: 0; }
   #loja .visit__cols { grid-template-columns: minmax(0, 1fr); }
   
-  .stars { color: var(--accent); letter-spacing: 2px; }
+  ::selection { background: #0b2f8a; color: #f5f6f7; }
+  html { scrollbar-color: #9aa6b8 #f5f6f7; accent-color: #0b2f8a; }
   main > section[id] { scroll-margin-top: 72px; }
   a, button { touch-action: manipulation; }
 </style>
@@ -111,9 +112,8 @@
   <section class="hero hero--split" data-enter aria-labelledby="hero-h">
     <div class="wrap"><div class="hero-text grid hero__grid">
       <div class="hero__text span-5">
-        <p class="hero__kicker"><span class="dot" aria-hidden="true"></span>Em Canoas desde 1994</p>
         <h1 id="hero-h">Vidraçaria e molduras no centro de Canoas</h1>
-        <p class="hero__lead">Box, espelhos, sacadas e guarda-corpos em vidro temperado, com instalação. E molduras para quadros. Orçamento grátis.</p>
+        <p class="hero__lead">Box, espelhos, sacadas e guarda-corpos em vidro temperado, com instalação. E molduras para quadros. Desde 1994, orçamento grátis.</p>
         <div class="btn-row">
           <a class="btn btn--primary" href="https://wa.me/5551984574679?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento.">Pedir orçamento no WhatsApp<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
           <a class="btn btn--secondary" href="#servicos">Ver os serviços</a>
@@ -201,7 +201,7 @@
           <blockquote>Show de bola, excelente serviço, muito educados e prestativos.</blockquote>
           <figcaption class="person"><span><span class="person__name">Daniela F.</span><span class="person__role">Avaliação no Google</span></span></figcaption>
         </figure>
-        <div><p class="t-stat">4,4 <span class="stars" aria-hidden="true">★</span></p><p class="t-small muted">Nota no Google, em 42 avaliações</p></div>
+        <div><p class="t-stat">4,4</p><p class="t-small muted">de 5 no Google, em 42 avaliações</p></div>
       </div>
       <div class="frame frame--photo frame--fill span-6 start-7">
         <img class="frame__img" src="img/quadro-dourado.jpg" alt="Quadro de uma mulher com brincos dourados em moldura dourada" width="720" height="1280" loading="lazy" data-source="client">
