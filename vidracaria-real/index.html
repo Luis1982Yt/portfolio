@@ -1,275 +1,365 @@
 <!doctype html>
-<!-- Base visual: design-taste-frontend (tasteskill 2.5) para layout e seções; awesome-design-md "airbnb" como referência
-     de sistema (fotos grandes do próprio negócio, uma cor só nos botões, avaliação com estrela). Trocado: a cor de
-     destaque virou o azul-marinho do logo da Real, e a tipografia é Lora / Nunito Sans (dealt pelo start.mjs). -->
-<html lang="pt-BR" data-type="service" data-radius="soft" data-buttons="arrow" data-motion>
+<!-- Vidraçaria & Molduras Real: fusão da prévia feita com a taste skill (estrutura, textos, serviços com foto que troca,
+     endereço novo em destaque) com o redesign do GPT (papel creme, selo com coroa, faixa azul do endereço novo,
+     seção azul de visita, detalhe dourado, Libre Baskerville + DM Sans). Revisado com Impeccable e Web Interface Guidelines:
+     sem rótulos acima dos títulos, sem numeração 01-06, sem emoji ou caractere como ícone, sem 5 estrelas para nota 4,4. -->
+<html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <base href="/vidracaria-real/">
+<meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Vidraçaria &amp; Molduras Real: vidros e molduras em Canoas</title>
-<meta name="description" content="Box, espelhos, sacadas e guarda-corpos em vidro temperado, e molduras para quadros. Na Av. Victor Barreto, 2110, no Centro de Canoas. Orçamento grátis pelo WhatsApp.">
-<meta property="og:type" content="website">
+<title>Vidraçaria &amp; Molduras Real: vidros e molduras em Canoas desde 1994</title>
+<meta name="description" content="Box, espelhos, sacadas e guarda-corpos em vidro temperado, e molduras para quadros. Agora na Av. Victor Barreto, 2110, Centro de Canoas. Orçamento grátis pelo WhatsApp.">
 <meta property="og:title" content="Vidraçaria &amp; Molduras Real, em Canoas desde 1994">
 <meta property="og:description" content="Vidro temperado instalado na sua casa e molduras para seus quadros. Orçamento grátis pelo WhatsApp.">
 <meta property="og:image" content="share.jpg">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#09245e">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#f5f6f7">
-<!-- <link rel="canonical" href="https://[domínio da Real]/"> -->
-<meta name="robots" content="noindex">
-<meta name="site-kind" content="other">
-<meta name="page-type" content="service">
-<link rel="preload" href="assets/fonts/lora-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/system.css">
-<link rel="stylesheet" href="assets/ui/cards.css">
-<link rel="stylesheet" href="assets/motion/motion.css">
-<link rel="stylesheet" href="assets/backgrounds/backgrounds.css">
-<link rel="stylesheet" href="assets/layout/layout.css">
-<link rel="stylesheet" href="assets/icons/icon.css">
+<link rel="preload" href="fonts/libre-baskerville-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/sacada-vidro-hero.jpg" as="image">
 <style>
-@font-face { font-family: "Lora"; font-weight: 400; font-display: swap; src: url(assets/fonts/lora-latin-400-normal.woff2) format("woff2"); }
-@font-face { font-family: "Lora"; font-weight: 500; font-display: swap; src: url(assets/fonts/lora-latin-500-normal.woff2) format("woff2"); }
-@font-face { font-family: "Nunito Sans"; font-weight: 400; font-display: swap; src: url(assets/fonts/nunito-sans-latin-400-normal.woff2) format("woff2"); }
-@font-face { font-family: "Nunito Sans"; font-weight: 500; font-display: swap; src: url(assets/fonts/nunito-sans-latin-500-normal.woff2) format("woff2"); }
-@font-face { font-family: "Nunito Sans"; font-weight: 600; font-display: swap; src: url(assets/fonts/nunito-sans-latin-600-normal.woff2) format("woff2"); }
-:root {
-  --p-bg: #f5f6f7; --p-surface: #e9edf1; --p-ink: #16202e; --p-muted: #4a5566;
-  --p-accent: #0b2f8a; --p-accent-ink: #f5f6f7; --p-action: #0b2f8a; --p-action-ink: #f5f6f7;
-  --p-inv-bg: #0b2f8a; --p-inv-surface: #1a3d96; --p-inv-ink: #f5f6f7; --p-inv-muted: #c3cde4;
-  --p-inv-accent: #f5f6f7; --p-inv-accent-ink: #0b2f8a; --p-inv-action: #f5f6f7; --p-inv-action-ink: #0b2f8a;
-  --font-display: "Lora", Georgia, serif;
-  --font-text: "Nunito Sans", system-ui, sans-serif;
-  --display-weight: 400;
-  --display-tracking: -0.015em;
-  --display-tracking-xl: -0.02em;
-  --ly-scale: 1.02;
+@font-face{font-family:"Libre Baskerville";font-weight:400;font-display:swap;src:url(fonts/libre-baskerville-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Libre Baskerville";font-weight:700;font-display:swap;src:url(fonts/libre-baskerville-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-weight:400;font-display:swap;src:url(fonts/dm-sans-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-weight:500;font-display:swap;src:url(fonts/dm-sans-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-weight:700;font-display:swap;src:url(fonts/dm-sans-latin-700-normal.woff2) format("woff2")}
+:root{
+  --blue:#0b2f8a; --navy:#09245e; --deep:#071b49;
+  --ink:#17223a; --body:#4b5566; --paper:#fffefa; --cream:#f7f5ef; --stone:#eef0f2;
+  --gold:#c9a96a; --gold-ink:#7a5a1e; --line:#dddcd7; --on-navy:#c8d2ea;
+  --serif:"Libre Baskerville",Georgia,serif; --sans:"DM Sans",system-ui,sans-serif;
+  --wrap:min(1160px,calc(100% - 48px));
 }
-</style>
-<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
-<script src="assets/backgrounds/backgrounds.js"></script>
-<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
-<link rel="modulepreload" href="assets/moments/moments.js">
-<link rel="modulepreload" href="assets/moments/lib.js">
-<link rel="modulepreload" href="assets/moments/pinned-chapters/moment.js">
-<style>
-  #trabalhos .work > .frame { aspect-ratio: 4 / 3; margin: 0; }
-  #loja .visit__cols { grid-template-columns: minmax(0, 1fr); }
-  
-  ::selection { background: #0b2f8a; color: #f5f6f7; }
-  html { scrollbar-color: #9aa6b8 #f5f6f7; accent-color: #0b2f8a; }
-  main > section[id] { scroll-margin-top: 72px; }
-  a, button { touch-action: manipulation; }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;accent-color:var(--blue);scrollbar-color:#9aa3b3 var(--paper)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;color:var(--ink);background:var(--paper);font:400 16px/1.65 var(--sans)}
+::selection{background:var(--blue);color:#fff}
+a{color:inherit;text-decoration:none;touch-action:manipulation}
+img{display:block;max-width:100%}
+h1,h2,h3,p,ul,dl,dd,figure,blockquote{margin:0}
+h1,h2{font-family:var(--serif);font-weight:400;letter-spacing:-.02em;text-wrap:balance;color:var(--ink)}
+h2{font-size:clamp(32px,3.6vw,48px);line-height:1.15}
+section[id]{scroll-margin-top:96px}
+.wrap{width:var(--wrap);margin-inline:auto}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:8px;z-index:50;background:var(--blue);color:#fff;padding:10px 14px}
+.skip:focus{left:16px}
+
+/* faixa de cima */
+.top{background:var(--navy);color:var(--on-navy);font-size:13px}
+.top .wrap{display:flex;justify-content:space-between;gap:12px;padding:9px 0}
+.top strong{color:#f1dca8;font-weight:700}
+
+/* cabeçalho */
+header{position:sticky;top:0;z-index:20;background:rgba(255,254,250,.96);border-bottom:1px solid var(--line)}
+.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.crest{width:46px;height:52px;flex:none}
+.brand__name{font:700 22px/1 var(--serif);color:var(--blue)}
+.brand__name small{display:block;font:500 12px/1 var(--sans);color:var(--body);margin-top:6px;letter-spacing:.01em}
+nav{display:flex;align-items:center;gap:28px;font-size:15px;font-weight:500}
+nav a:not(.btn){padding:8px 0;border-bottom:1px solid transparent;transition:border-color .2s,color .2s}
+nav a:not(.btn):hover{color:var(--blue);border-color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;background:var(--blue);color:#fff;border:1px solid var(--blue);font:700 15px/1 var(--sans);transition:background .2s,transform .2s}
+.btn:hover{background:var(--navy);transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn--ghost{background:transparent;color:var(--blue)}
+.btn--ghost:hover{background:#e9eefb}
+.btn--light{background:#fff;color:var(--blue);border-color:#fff}
+.btn--light:hover{background:#e9eefb}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* hero */
+.hero{background:var(--cream);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.04fr);min-height:min(640px,calc(100svh - 120px))}
+.hero__copy{display:flex;flex-direction:column;justify-content:center;padding:72px clamp(24px,5vw,80px) 72px max(24px,calc((100vw - 1160px)/2))}
+.hero h1{font-size:clamp(42px,5vw,70px);line-height:1.08;letter-spacing:-.03em}
+.hero h1 span{color:var(--blue)}
+.hero__lead{max-width:460px;margin-top:24px;color:var(--body);font-size:18px;line-height:1.7}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero__photo{position:relative;overflow:hidden;min-height:440px}
+.hero__photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 50%}
+.stamp{position:absolute;left:28px;bottom:28px;background:var(--paper);padding:16px 20px;border-top:3px solid var(--gold);max-width:300px}
+.stamp b{display:block;font:400 19px/1.3 var(--serif);color:var(--ink)}
+.stamp span{display:block;margin-top:4px;font-size:14px;color:var(--body)}
+
+/* faixa do endereço novo */
+.moved{background:var(--blue);color:#fff}
+.moved .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 0}
+.moved__text{display:flex;align-items:center;gap:16px}
+.moved__text svg{width:28px;height:28px;flex:none;color:#f1dca8}
+.moved strong{display:block;font-size:17px}
+.moved p{color:var(--on-navy);font-size:15px}
+.moved a{flex:none;font-weight:700;font-size:15px;border-bottom:1px solid #f1dca8;padding:6px 0}
+
+/* seções */
+.section{padding:104px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:44px}
+.head p{max-width:360px;color:var(--body);font-size:16px}
+
+/* serviços: lista com foto que troca */
+.services{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
+.svc{list-style:none;padding:0;border-top:1px solid var(--line)}
+.svc li{display:grid;grid-template-columns:1fr auto;gap:4px 20px;padding:20px 4px;border-bottom:1px solid var(--line);cursor:pointer;transition:background .2s}
+.svc li:hover,.svc li[aria-current="true"]{background:var(--cream)}
+.svc h3{font:700 18px/1.35 var(--sans);color:var(--ink)}
+.svc li[aria-current="true"] h3{color:var(--blue)}
+.svc p{grid-column:1;color:var(--body);font-size:15px}
+.svc .tag{grid-row:1;grid-column:2;font-size:13px;color:var(--gold-ink);font-weight:700;white-space:nowrap}
+.svc-photo{position:sticky;top:110px;aspect-ratio:4/5;overflow:hidden;background:var(--stone)}
+.svc-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s}
+.svc-photo img.is-on{opacity:1}
+
+/* trabalhos */
+.works{background:var(--stone)}
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.gallery figure{position:relative;overflow:hidden;background:#fff}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gallery figure img{position:absolute;inset:0}
+.gallery figure:hover img{transform:scale(1.03)}
+.g1{grid-column:span 7;aspect-ratio:16/10}
+.g2{grid-column:span 5;aspect-ratio:8/7}
+.g3{grid-column:span 4;aspect-ratio:4/5}
+.g4{grid-column:span 4;aspect-ratio:4/5}
+.g5{grid-column:span 4;aspect-ratio:4/5}
+.gallery figcaption{position:absolute;left:12px;bottom:12px;background:var(--paper);padding:7px 12px;font-size:13px;font-weight:700;color:var(--ink)}
+
+/* avaliações */
+.reviews{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9%;align-items:center}
+.reviews__photo{position:relative}
+.reviews__photo img{aspect-ratio:5/4;width:100%;height:auto;object-fit:cover}
+.since{position:absolute;right:-20px;bottom:-20px;background:var(--blue);color:#fff;padding:18px 26px;font:400 32px/1 var(--serif)}
+.since small{display:block;font:700 12px/1 var(--sans);letter-spacing:.06em;margin-bottom:6px;color:#f1dca8}
+.score{display:flex;align-items:baseline;gap:12px;margin-top:20px}
+.score b{font:400 44px/1 var(--serif);color:var(--blue)}
+.score span{color:var(--body);font-size:15px}
+.quote{margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+.quote blockquote{font:italic 400 20px/1.6 var(--serif);color:var(--ink)}
+.quote figcaption{margin-top:10px;font-size:14px;font-weight:700;color:var(--body)}
+
+/* visita */
+.visit{background:var(--navy);color:#fff}
+.visit h2{color:#fff}
+.visit__grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px}
+.badge{display:inline-block;margin-top:20px;background:#f1dca8;color:var(--ink);font-size:13px;font-weight:700;padding:7px 12px}
+.address{font:400 clamp(24px,2.6vw,34px)/1.35 var(--serif);margin-top:24px;font-style:normal}
+.maplink{display:inline-block;margin-top:16px;color:#f1dca8;font-weight:700;border-bottom:1px solid #f1dca8;padding:6px 0}
+.info{border-top:1px solid rgba(255,255,255,.25);margin-top:8px}
+.info div{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(255,255,255,.25);padding:16px 0;font-size:16px}
+.info dt{color:var(--on-navy)}
+.info dd{font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+.visit .btn{margin-top:32px}
+
+footer{background:var(--deep);color:var(--on-navy);padding:28px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* botão fixo do WhatsApp no celular */
+.fab{display:none}
+
+@media (max-width:900px){
+  nav a:not(.btn){display:none}
+  .hero{grid-template-columns:1fr}
+  .hero__copy{padding:56px 24px 40px}
+  .hero__photo{min-height:360px}
+  .services,.reviews,.visit__grid{grid-template-columns:1fr;gap:40px}
+  .svc-photo{position:relative;top:0;aspect-ratio:4/3;order:-1}
+  .since{right:0}
+  .g1,.g2{grid-column:span 12}
+  .g2{aspect-ratio:16/10}
+  .g3,.g4,.g5{grid-column:span 4}
+}
+@media (max-width:560px){
+  :root{--wrap:calc(100% - 32px)}
+  .top .wrap{justify-content:center;text-align:center}
+  .top .wrap span:last-child{display:none}
+  .nav{min-height:68px}
+  nav .btn{display:none}
+  .brand__name{font-size:19px}
+  .crest{width:38px;height:43px}
+  .hero__copy{padding:44px 16px 36px}
+  .hero h1{font-size:40px}
+  .hero__lead{font-size:17px}
+  .actions .btn{width:100%}
+  .hero__photo{min-height:300px}
+  .stamp{left:16px;right:16px;bottom:16px}
+  .moved .wrap{flex-direction:column;align-items:flex-start;gap:12px}
+  .section{padding:72px 0}
+  .head{display:block}
+  .head p{margin-top:12px}
+  .g3,.g4,.g5{grid-column:span 12;aspect-ratio:16/10}
+  .fab{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;align-items:center;justify-content:center;gap:10px;min-height:52px;background:#1d8e5a;color:#fff;font-weight:700;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+  .fab svg{width:20px;height:20px}
+  body{padding-bottom:76px}
+}
 </style>
 </head>
 <body>
-<!-- type: service (vidraçaria que instala vidro temperado, e loja de molduras)
-     deal: hero split, nav nav-mega, close close-photo, footer footer-dark, rhythm surface-pairs, buttons arrow, mark wordmark, grounds none
-     palette cobalt-on-sand (o segundo do deal: o primeiro, azul vivo, brigava com o azul-marinho do logo da Real); type lora
-     moments: pinned-chapters em #como-funciona -->
-<header class="nav">
-  <div class="wrap nav__bar">
-    <a class="skip-link" href="#top">Pular para o conteúdo</a>
-    <a class="nav__logo" href="#top" translate="no">Vidraçaria Real</a>
-    <nav class="nav__links" aria-label="Principal">
-      <div class="nav__item">
-        <a class="nav__link" href="#servicos">Serviços <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <div class="nav__menu">
-          <div class="wrap grid">
-            <div class="menu-col span-3">
-              <p class="t-label">Vidros</p>
-              <a href="#servicos">Box para banheiro<span>Vidro temperado sob medida</span></a>
-              <a href="#servicos">Sacadas e fechamentos<span>Varanda, sacada e área</span></a>
-              <a href="#servicos">Guarda-corpo e corrimão<span>Vidro com inox</span></a>
-            </div>
-            <div class="menu-col span-3">
-              <p class="t-label">Loja</p>
-              <a href="#servicos">Molduras e quadros<span>Escolha entre as amostras</span></a>
-              <a href="#servicos">Espelhos<span>No tamanho da parede</span></a>
-            </div>
-            <a class="menu-card span-3 start-10" href="#trabalhos">
-              <div class="panel"><img class="frame__img" src="img/sacadas-vidro.jpg" alt="Sacadas com guarda-corpo de vidro em um prédio de dois andares" width="2400" height="1350"></div>
-              <span class="t-card">Trabalhos entregues</span>
-              <span class="t-small muted">Sacadas, escadas e quadros</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="nav__item"><a class="nav__link" href="#trabalhos">Trabalhos</a></div>
-      <div class="nav__item"><a class="nav__link" href="#como-funciona">Como funciona</a></div>
-      <div class="nav__item"><a class="nav__link" href="#loja">A loja</a></div>
+<a class="skip" href="#inicio">Pular para o conteúdo</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3Z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-6.2-7-11.5a7 7 0 1 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h13M13 6l6 6-6 6"/></symbol>
+</svg>
+
+<div class="top"><div class="wrap"><span>Em Canoas desde <strong>1994</strong></span><span>Orçamento grátis e aceitamos cartão</span></div></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#inicio" aria-label="Vidraçaria e Molduras Real, início">
+      <svg class="crest" viewBox="0 0 46 52" aria-hidden="true">
+        <path d="M13 9 16 2l4 5 3-6 3 6 4-5 3 7Z" fill="#c9a96a"/>
+        <rect x="2" y="13" width="42" height="37" fill="none" stroke="#0b2f8a" stroke-width="2.4"/>
+        <text x="23" y="41" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="25" fill="#0b2f8a">R</text>
+      </svg>
+      <span class="brand__name" translate="no">Real<small>Vidraçaria &amp; Molduras</small></span>
+    </a>
+    <nav aria-label="Principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#trabalhos">Trabalhos</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#loja">Endereço</a>
+      <a class="btn" href="https://wa.me/5551984574679?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Pedir orçamento</a>
     </nav>
-    <div class="nav__actions">
-      <a class="btn btn--primary" href="https://wa.me/5551984574679?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento.">Pedir orçamento</a>
-    </div>
-    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
-      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-    </button>
   </div>
 </header>
 
-<main id="top">
-  <section class="hero hero--split" data-enter aria-labelledby="hero-h">
-    <div class="wrap"><div class="hero-text grid hero__grid">
-      <div class="hero__text span-5">
-        <h1 id="hero-h">Vidraçaria e molduras no centro de Canoas</h1>
-        <p class="hero__lead">Box, espelhos, sacadas e guarda-corpos em vidro temperado, com instalação. E molduras para quadros. Desde 1994, orçamento grátis.</p>
-        <div class="btn-row">
-          <a class="btn btn--primary" href="https://wa.me/5551984574679?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento.">Pedir orçamento no WhatsApp<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
-          <a class="btn btn--secondary" href="#servicos">Ver os serviços</a>
-        </div>
+<main id="inicio">
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="hero__copy">
+      <h1 id="hero-h">Vidraçaria e molduras em Canoas, <span>desde 1994.</span></h1>
+      <p class="hero__lead">Box, espelhos, sacadas e guarda-corpos em vidro temperado, com instalação. E molduras para os seus quadros, escolhidas na loja. O orçamento é grátis.</p>
+      <div class="actions">
+        <a class="btn" href="https://wa.me/5551984574679?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir orçamento no WhatsApp</a>
+        <a class="btn btn--ghost" href="#trabalhos">Ver os trabalhos</a>
       </div>
-      <div class="hero__media span-6 start-7">
-        <img src="img/sacada-vidro-hero.jpg" alt="Sacada de uma casa fechada com guarda-corpo e painéis de vidro temperado" width="2048" height="1152" style="--ly-pos: 40% 50%" fetchpriority="high" data-source="client" data-subject="sacada instalada pela Real">
-        <div class="ly-float">
-          <div class="ly-float__row"><span class="ly-live">Segunda a sexta</span><span>8h15 às 18h</span></div>
-          <div class="ly-float__title">Orçamento grátis pelo WhatsApp</div>
-        </div>
-      </div>
-    </div></div>
+    </div>
+    <div class="hero__photo">
+      <img src="img/sacada-vidro-hero.jpg" alt="Sacada de uma casa fechada com guarda-corpo e painéis de vidro temperado" width="2048" height="1152" fetchpriority="high">
+      <div class="stamp"><b>Seg a sex, 8h15 às 18h</b><span>Resposta pelo WhatsApp</span></div>
+    </div>
   </section>
 
-  <section class="section" id="servicos" style="--hm: 2" aria-labelledby="servicos-h">
+  <div class="moved">
     <div class="wrap">
-      <div class="section-head"><h2 id="servicos-h">Serviços em vidro e molduras</h2></div>
-      <div class="grid grid--top fill" data-peek>
-        <ul class="rows span-5">
-          <li data-peek-to="box" tabindex="0"><span class="rows__name">Box para banheiro</span><p>Vidro temperado sob medida, com instalação.</p><span class="rows__value">Temperado</span></li>
-          <li data-peek-to="sacada" tabindex="0"><span class="rows__name">Sacadas e fechamentos</span><p>Vidro para fechar sacada, varanda e área de serviço.</p><span class="rows__value">Temperado</span></li>
-          <li data-peek-to="guarda" tabindex="0"><span class="rows__name">Guarda-corpo e corrimão</span><p>Vidro com inox para escadas, terraços e mezaninos.</p><span class="rows__value">Vidro e inox</span></li>
-          <li data-peek-to="espelho" tabindex="0"><span class="rows__name">Espelhos</span><p>Para banheiro, sala ou quarto, no tamanho da parede.</p><span class="rows__value">Sob medida</span></li>
-          <li data-peek-to="moldura" tabindex="0"><span class="rows__name">Molduras e quadros</span><p>Escolha entre as amostras da loja, para foto ou tela.</p><span class="rows__value">Na loja</span></li>
-          <li data-peek-to="manutencao" tabindex="0"><span class="rows__name">Troca e manutenção</span><p>Vidro quebrado, janela ou porta, em vidro comum ou temperado.</p><span class="rows__value">Comum e temperado</span></li>
+      <div class="moved__text">
+        <svg aria-hidden="true"><use href="#i-pin"/></svg>
+        <div><strong>Mudamos de endereço</strong><p>Agora na Av. Victor Barreto, 2110, Centro de Canoas</p></div>
+      </div>
+      <a href="#loja">Como chegar</a>
+    </div>
+  </div>
+
+  <section class="section" id="servicos" aria-labelledby="servicos-h">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="servicos-h">Serviços em vidro e molduras</h2>
+        <p>Do box do banheiro à moldura daquele quadro especial. Passe o mouse ou toque em um serviço para ver um trabalho.</p>
+      </div>
+      <div class="services">
+        <ul class="svc" id="svc">
+          <li data-img="0" aria-current="true" tabindex="0"><h3>Box para banheiro</h3><span class="tag">Vidro temperado</span><p>Sob medida para o seu banheiro, com instalação.</p></li>
+          <li data-img="1" tabindex="0"><h3>Sacadas e fechamentos</h3><span class="tag">Vidro temperado</span><p>Para fechar sacada, varanda e área de serviço.</p></li>
+          <li data-img="2" tabindex="0"><h3>Guarda-corpo e corrimão</h3><span class="tag">Vidro e inox</span><p>Para escadas, terraços e mezaninos.</p></li>
+          <li data-img="3" tabindex="0"><h3>Espelhos</h3><span class="tag">Sob medida</span><p>Para banheiro, sala ou quarto, no tamanho da parede.</p></li>
+          <li data-img="4" tabindex="0"><h3>Molduras e quadros</h3><span class="tag">Na loja</span><p>Escolha entre as amostras, para foto, pôster ou tela.</p></li>
+          <li data-img="5" tabindex="0"><h3>Troca e manutenção</h3><span class="tag">Comum e temperado</span><p>Vidro quebrado, janela ou porta.</p></li>
         </ul>
-        <div class="frame frame--photo frame--fill span-6 start-7">
-          <img class="frame__img" data-peek-for="box" src="img/box-banheiro.jpg" alt="Box de vidro temperado com perfil preto em um banheiro de azulejo cinza" width="540" height="903" data-source="client">
-          <img class="frame__img" data-peek-for="sacada" src="img/fechamento-casa.jpg" alt="Varanda de uma casa fechada com painéis de vidro de correr" width="1200" height="675" hidden data-source="client">
-          <img class="frame__img" data-peek-for="guarda" src="img/guarda-corpo-escada.jpg" alt="Guarda-corpo de vidro com corrimão de inox ao lado de uma escada de madeira" width="540" height="960" hidden data-source="client">
-          <img class="frame__img" data-peek-for="espelho" src="img/espelho-banheiro.jpg" alt="Espelho grande sobre a bancada de um banheiro com duas torneiras" width="499" height="499" hidden data-source="client">
-          <img class="frame__img" data-peek-for="moldura" src="img/molduras-amostras.jpg" alt="Amostras de moldura em madeira, dourado e cores fortes encostadas na parede" width="1200" height="1600" hidden data-source="client">
-          <img class="frame__img" data-peek-for="manutencao" src="img/fechamento-janelas.jpg" alt="Janelas de vidro novas instaladas na frente de uma casa" width="864" height="480" hidden data-source="client">
+        <div class="svc-photo" aria-live="polite">
+          <img class="is-on" src="img/box-banheiro.jpg" alt="Box de vidro temperado com perfil preto em um banheiro" width="540" height="903">
+          <img src="img/fechamento-casa.jpg" alt="Varanda de uma casa fechada com painéis de vidro de correr" width="1200" height="675" loading="lazy">
+          <img src="img/guarda-corpo-escada.jpg" alt="Guarda-corpo de vidro com corrimão de inox ao lado de uma escada" width="540" height="960" loading="lazy">
+          <img src="img/espelho-banheiro.jpg" alt="Espelho grande sobre a bancada de um banheiro" width="499" height="499" loading="lazy">
+          <img src="img/molduras-amostras.jpg" alt="Amostras de moldura em madeira, dourado e cores" width="1200" height="1600" loading="lazy">
+          <img src="img/fechamento-janelas.jpg" alt="Janelas de vidro novas na frente de uma casa" width="864" height="480" loading="lazy">
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="trabalhos" aria-labelledby="trabalhos-h">
+  <section class="section works" id="trabalhos" aria-labelledby="trabalhos-h">
     <div class="wrap">
-      <div class="section-head"><h2 id="trabalhos-h">Obras e quadros entregues</h2><p>Uma sacada de prédio fechada com vidro temperado, e a parede de quadros emoldurados na loja.</p></div>
-      <div class="grid work">
-        <figure class="frame frame--photo span-6"><img class="frame__img" src="img/sacadas-vidro.jpg" alt="Sacadas de prédio com guarda-corpo de vidro" width="2400" height="1350" loading="lazy" data-source="client"></figure>
-        <figure class="frame frame--photo span-6"><img class="frame__img" src="img/quadros-emoldurados.jpg" alt="Parede da loja com quadros emoldurados e um espelho de moldura dourada" width="1200" height="1926" loading="lazy" data-source="client"></figure>
+      <div class="head">
+        <h2 id="trabalhos-h">Trabalhos entregues pela Real</h2>
+        <p>Fotos de obras e da loja, publicadas no perfil da Real no Google.</p>
+      </div>
+      <div class="gallery">
+        <figure class="g1"><img src="img/sacadas-vidro.jpg" alt="Sacadas de prédio com guarda-corpo de vidro" width="2400" height="1350" loading="lazy"><figcaption>Sacadas</figcaption></figure>
+        <figure class="g2"><img src="img/quadros-emoldurados.jpg" alt="Parede da loja com quadros emoldurados e um espelho de moldura dourada" width="1200" height="1926" loading="lazy"><figcaption>Quadros</figcaption></figure>
+        <figure class="g3"><img src="img/corrimao-escada.jpg" alt="Escada com guarda-corpo de vidro e corrimão de inox" width="480" height="672" loading="lazy"><figcaption>Corrimão</figcaption></figure>
+        <figure class="g4"><img src="img/guarda-corpo-terraco.jpg" alt="Guarda-corpo de vidro sendo instalado em um terraço" width="2400" height="1350" loading="lazy"><figcaption>Guarda-corpo</figcaption></figure>
+        <figure class="g5"><img src="img/molduras-amostras.jpg" alt="Amostras de moldura em madeira, dourado e cores" width="1200" height="1600" loading="lazy"><figcaption>Molduras</figcaption></figure>
       </div>
     </div>
   </section>
 
-  <section class="section" id="como-funciona" style="--h: 2" data-moment="pinned-chapters" aria-labelledby="como-h">
-    <div class="wrap mo-pc__grid">
-      <div class="mo-pc__text">
-        <h2 id="como-h">Orçamento em três passos</h2>
-        <ol class="mo-pc__steps">
-          <li class="mo-pc__step">
-            <h3>Medida ou foto pelo WhatsApp</h3>
-            <p>Pelo WhatsApp, com o lugar e o tamanho aproximado do vidro.</p>
-            <figure class="mo-pc__visual"><img src="img/guarda-corpo-interno.jpg" alt="Guarda-corpo de vidro com colunas de inox no alto de uma escada" width="480" height="672" loading="lazy"></figure>
-          </li>
-          <li class="mo-pc__step">
-            <h3>Orçamento sem custo</h3>
-            <p>O valor do vidro, das ferragens e da instalação, antes de começar qualquer serviço.</p>
-            <figure class="mo-pc__visual"><img src="img/fechamento-casa.jpg" alt="Casa com a varanda fechada por vidros de correr" width="1200" height="675" loading="lazy"></figure>
-          </li>
-          <li class="mo-pc__step">
-            <h3>Instalação com dia marcado</h3>
-            <p>Com o orçamento aprovado, combinamos o dia. Aceitamos cartão.</p>
-            <figure class="mo-pc__visual"><img src="img/sacadas-predio.jpg" alt="Prédio de dois andares com sacadas de vidro na fachada" width="1200" height="675" loading="lazy"></figure>
-          </li>
-        </ol>
+  <section class="section" id="avaliacoes" aria-labelledby="avaliacoes-h">
+    <div class="wrap reviews">
+      <div class="reviews__photo">
+        <img src="img/molduras-parede.jpg" alt="Parede da loja com dezenas de modelos de moldura lado a lado" width="1200" height="914" loading="lazy">
+        <span class="since"><small>DESDE</small>1994</span>
       </div>
-      <div class="mo-pc__visuals frame"></div>
-    </div>
-  </section>
-
-  <section class="section ground-surface" id="avaliacoes" aria-labelledby="avaliacoes-h">
-    <div class="wrap grid grid--top fill">
-      <div class="span-6 stack-6">
-        <div class="section-head"><h2 id="avaliacoes-h">Avaliações no Google</h2></div>
+      <div>
+        <h2 id="avaliacoes-h">Avaliações no Google</h2>
+        <p class="score"><b>4,4</b><span>de 5, em 42 avaliações</span></p>
         <figure class="quote">
-          <blockquote>O atendimento é muito cordial e os prazos de entrega são sempre ótimos. Emolduro meus quadros sempre com eles.</blockquote>
-          <figcaption class="person"><span><span class="person__name">Gicele K.</span><span class="person__role">Avaliação no Google</span></span></figcaption>
+          <blockquote>“O atendimento é muito cordial e os prazos de entrega são sempre ótimos. Emolduro meus quadros sempre com eles.”</blockquote>
+          <figcaption>Gicele K.</figcaption>
         </figure>
         <figure class="quote">
-          <blockquote>Show de bola, excelente serviço, muito educados e prestativos.</blockquote>
-          <figcaption class="person"><span><span class="person__name">Daniela F.</span><span class="person__role">Avaliação no Google</span></span></figcaption>
+          <blockquote>“Show de bola, excelente serviço, muito educados e prestativos.”</blockquote>
+          <figcaption>Daniela F.</figcaption>
         </figure>
-        <div><p class="t-stat">4,4</p><p class="t-small muted">de 5 no Google, em 42 avaliações</p></div>
-      </div>
-      <div class="frame frame--photo frame--fill span-6 start-7">
-        <img class="frame__img" src="img/quadro-dourado.jpg" alt="Quadro de uma mulher com brincos dourados em moldura dourada" width="720" height="1280" loading="lazy" data-source="client">
       </div>
     </div>
   </section>
 
-  <section class="section ground-surface" id="loja" aria-labelledby="loja-h">
-    <div class="wrap grid grid--top fill">
-      <div class="span-5 stack-6">
-        <div class="section-head"><h2 id="loja-h">A loja mudou de endereço</h2><p>Estamos na mesma avenida, agora no número 2110.</p></div>
-        <div class="visit">
-          <div class="visit__cols">
-            <div class="visit__col stack-4">
-              <address class="visit__address">Av. Victor Barreto, 2110<br>Centro, Canoas</address>
-              <a class="link" href="https://www.openstreetmap.org/search?query=Avenida%20Victor%20Barreto%2C%20Centro%2C%20Canoas">Ver no mapa</a>
-            </div>
-            <div class="visit__col">
-              <dl class="hours" data-tz="America/Sao_Paulo"><dt>Seg a sex</dt><dd>8h15 às 18h</dd><dt>Sáb e dom</dt><dd>Fechado</dd></dl>
-            </div>
-          </div>
-          <ul class="visit__rows">
-            <li><span>WhatsApp</span><a href="https://wa.me/5551984574679">Chamar no WhatsApp</a></li>
-            <li><span>Orçamento</span><span>Grátis</span></li>
-            <li><span>Pagamento</span><span>Cartão</span></li>
-          </ul>
-        </div>
+  <section class="section visit" id="loja" aria-labelledby="loja-h">
+    <div class="wrap visit__grid">
+      <div>
+        <h2 id="loja-h">A loja está em um endereço novo</h2>
+        <span class="badge">Mesma avenida, agora no número 2110</span>
+        <address class="address">Av. Victor Barreto, 2110<br>Centro, Canoas</address>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Victor+Barreto%2C+2110%2C+Centro%2C+Canoas+RS" target="_blank" rel="noopener">Abrir no Google Maps</a>
       </div>
-      <div class="tile span-6 start-7"><div class="tile__media" style="--tile-ratio: 4 / 3">
-        <img src="img/loja-quadros.jpg" alt="Parede da loja coberta de quadros de cervejas e placas decorativas emolduradas" width="720" height="1280" loading="lazy" data-source="client">
-      </div></div>
+      <div>
+        <dl class="info">
+          <div><dt>Segunda a sexta</dt><dd>8h15 às 18h</dd></div>
+          <div><dt>Sábado e domingo</dt><dd>Fechado</dd></div>
+          <div><dt>WhatsApp</dt><dd>(51) 98457-4679</dd></div>
+          <div><dt>Orçamento</dt><dd>Grátis</dd></div>
+          <div><dt>Pagamento</dt><dd>Cartão</dd></div>
+        </dl>
+        <a class="btn btn--light" href="https://wa.me/5551984574679?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir orçamento no WhatsApp</a>
+      </div>
     </div>
   </section>
 </main>
 
-<footer class="footer closing footer--dark ground-inverse" id="contato" aria-labelledby="close-h">
+<footer>
   <div class="wrap">
-    <div class="closing__cta close--photo">
-      <div class="section-head--split">
-        <div><h2 id="close-h">Peça seu orçamento</h2><p class="t-lead">Seg a sex, das 8h15 às 18h. A resposta vem pelo WhatsApp.</p></div>
-        <a class="btn btn--primary" href="https://wa.me/5551984574679?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento.">Pedir orçamento no WhatsApp<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
-      </div>
-      <div class="close__media"><img src="img/molduras-parede.jpg" alt="Parede da loja com dezenas de modelos de moldura lado a lado" width="1200" height="914" loading="lazy" data-source="client" data-subject="as molduras da loja"></div>
-    </div>
-    <div class="closing__links">
-      <div class="grid">
-        <div class="span-4 stack-4">
-          <a class="nav__logo" href="#top" translate="no">Vidraçaria Real</a>
-          <p class="footer__lede">Vidros e molduras em Canoas desde 1994.</p>
-        </div>
-        <div class="span-2 footer__col"><h3>Serviços</h3><ul><li><a href="#servicos">Box e espelhos</a></li><li><a href="#servicos">Sacadas</a></li><li><a href="#servicos">Molduras</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>Trabalhos</h3><ul><li><a href="#trabalhos">Fotos</a></li><li><a href="#avaliacoes">Avaliações</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>Como funciona</h3><ul><li><a href="#como-funciona">Os três passos</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>A loja</h3><ul><li><a href="#loja">Endereço e horário</a></li></ul></div>
-      </div>
-      <div class="footer__legal">
-        <span>&copy; 2026 Vidraçaria &amp; Molduras Real</span>
-      </div>
-    </div>
+    <span>&copy; 2026 Vidraçaria &amp; Molduras Real, em Canoas desde 1994</span>
+    <span>Av. Victor Barreto, 2110, Centro, Canoas</span>
   </div>
 </footer>
 
-<nav class="actionbar" aria-label="Ações rápidas">
-  <a class="btn btn--primary" href="https://wa.me/5551984574679?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento.">Pedir orçamento</a>
-</nav>
+<a class="fab" href="https://wa.me/5551984574679?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir orçamento no WhatsApp</a>
 
-<script type="module" src="assets/system.js"></script>
-<script type="module" src="assets/motion/motion.js"></script>
-<script type="module" src="assets/layout/layout.js"></script>
+<script>
+(() => {
+  const list = document.getElementById('svc');
+  const imgs = document.querySelectorAll('.svc-photo img');
+  const pick = li => {
+    list.querySelectorAll('li').forEach(x => x.removeAttribute('aria-current'));
+    li.setAttribute('aria-current', 'true');
+    imgs.forEach((im, i) => im.classList.toggle('is-on', i === +li.dataset.img));
+  };
+  list.querySelectorAll('li').forEach(li => {
+    li.addEventListener('mouseenter', () => pick(li));
+    li.addEventListener('focus', () => pick(li));
+    li.addEventListener('click', () => pick(li));
+  });
+})();
+</script>
 </body>
 </html>
