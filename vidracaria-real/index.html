@@ -6,24 +6,23 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<base href="/vidracaria-real/">
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Vidraçaria &amp; Molduras Real: vidros e molduras em Canoas desde 1994</title>
 <meta name="description" content="Box, espelhos, sacadas e guarda-corpos em vidro temperado, e molduras para quadros. Agora na Av. Victor Barreto, 2110, Centro de Canoas. Orçamento grátis pelo WhatsApp.">
 <meta property="og:title" content="Vidraçaria &amp; Molduras Real, em Canoas desde 1994">
 <meta property="og:description" content="Vidro temperado instalado na sua casa e molduras para seus quadros. Orçamento grátis pelo WhatsApp.">
-<meta property="og:image" content="share.jpg">
+<meta property="og:image" content="/vidracaria-real/share.jpg">
 <meta name="theme-color" content="#09245e">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preload" href="fonts/libre-baskerville-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="img/sacada-vidro-hero.jpg" as="image">
+<link rel="icon" href="/vidracaria-real/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/vidracaria-real/fonts/libre-baskerville-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/vidracaria-real/img/sacada-vidro-hero.jpg" as="image">
 <style>
-@font-face{font-family:"Libre Baskerville";font-weight:400;font-display:swap;src:url(fonts/libre-baskerville-latin-400-normal.woff2) format("woff2")}
-@font-face{font-family:"Libre Baskerville";font-weight:700;font-display:swap;src:url(fonts/libre-baskerville-latin-700-normal.woff2) format("woff2")}
-@font-face{font-family:"DM Sans";font-weight:400;font-display:swap;src:url(fonts/dm-sans-latin-400-normal.woff2) format("woff2")}
-@font-face{font-family:"DM Sans";font-weight:500;font-display:swap;src:url(fonts/dm-sans-latin-500-normal.woff2) format("woff2")}
-@font-face{font-family:"DM Sans";font-weight:700;font-display:swap;src:url(fonts/dm-sans-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Libre Baskerville";font-weight:400;font-display:swap;src:url(/vidracaria-real/fonts/libre-baskerville-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Libre Baskerville";font-weight:700;font-display:swap;src:url(/vidracaria-real/fonts/libre-baskerville-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-weight:400;font-display:swap;src:url(/vidracaria-real/fonts/dm-sans-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-weight:500;font-display:swap;src:url(/vidracaria-real/fonts/dm-sans-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-weight:700;font-display:swap;src:url(/vidracaria-real/fonts/dm-sans-latin-700-normal.woff2) format("woff2")}
 :root{
   --blue:#0b2f8a; --navy:#09245e; --deep:#071b49;
   --ink:#17223a; --body:#4b5566; --paper:#fffefa; --cream:#f7f5ef; --stone:#eef0f2;
@@ -83,6 +82,8 @@ nav a:not(.btn):hover{color:var(--blue);border-color:var(--gold)}
 .stamp{position:absolute;left:28px;bottom:28px;background:var(--paper);padding:16px 20px;border-top:3px solid var(--gold);max-width:300px}
 .stamp b{display:block;font:400 19px/1.3 var(--serif);color:var(--ink)}
 .stamp span{display:block;margin-top:4px;font-size:14px;color:var(--body)}
+.stamp .stamp__tag{margin:0 0 6px;font-size:13px;font-weight:700;color:var(--gold-ink)}
+.stamp:hover b{color:var(--blue)}
 
 /* faixa do endereço novo */
 .moved{background:var(--blue);color:#fff}
@@ -190,6 +191,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .g3,.g4,.g5{grid-column:span 12;aspect-ratio:16/10}
   .fab{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;align-items:center;justify-content:center;gap:10px;min-height:52px;background:#1d8e5a;color:#fff;font-weight:700;box-shadow:0 8px 24px rgba(0,0,0,.2)}
   .fab svg{width:20px;height:20px}
+  .fab{opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .25s,transform .25s}
+  .fab.is-on{opacity:1;transform:none;pointer-events:auto}
   body{padding-bottom:76px}
 }
 </style>
@@ -201,8 +204,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-6.2-7-11.5a7 7 0 1 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h13M13 6l6 6-6 6"/></symbol>
 </svg>
-
-<div class="top"><div class="wrap"><span>Em Canoas desde <strong>1994</strong></span><span>Orçamento grátis e aceitamos cartão</span></div></div>
 
 <header>
   <div class="wrap nav">
@@ -235,20 +236,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </div>
     </div>
     <div class="hero__photo">
-      <img src="img/sacada-vidro-hero.jpg" alt="Sacada de uma casa fechada com guarda-corpo e painéis de vidro temperado" width="2048" height="1152" fetchpriority="high">
-      <div class="stamp"><b>Seg a sex, 8h15 às 18h</b><span>Resposta pelo WhatsApp</span></div>
+      <img src="/vidracaria-real/img/sacada-vidro-hero.jpg" alt="Sacada de uma casa fechada com guarda-corpo e painéis de vidro temperado" width="2048" height="1152" fetchpriority="high">
+      <a class="stamp" href="#loja"><span class="stamp__tag">Endereço novo</span><b>Av. Victor Barreto, 2110</b><span>Centro, Canoas. Seg a sex, 8h15 às 18h</span></a>
     </div>
   </section>
-
-  <div class="moved">
-    <div class="wrap">
-      <div class="moved__text">
-        <svg aria-hidden="true"><use href="#i-pin"/></svg>
-        <div><strong>Mudamos de endereço</strong><p>Agora na Av. Victor Barreto, 2110, Centro de Canoas</p></div>
-      </div>
-      <a href="#loja">Como chegar</a>
-    </div>
-  </div>
 
   <section class="section" id="servicos" aria-labelledby="servicos-h">
     <div class="wrap">
@@ -266,12 +257,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           <li data-img="5" tabindex="0"><h3>Troca e manutenção</h3><span class="tag">Comum e temperado</span><p>Vidro quebrado, janela ou porta.</p></li>
         </ul>
         <div class="svc-photo" aria-live="polite">
-          <img class="is-on" src="img/box-banheiro.jpg" alt="Box de vidro temperado com perfil preto em um banheiro" width="540" height="903">
-          <img src="img/fechamento-casa.jpg" alt="Varanda de uma casa fechada com painéis de vidro de correr" width="1200" height="675" loading="lazy">
-          <img src="img/guarda-corpo-escada.jpg" alt="Guarda-corpo de vidro com corrimão de inox ao lado de uma escada" width="540" height="960" loading="lazy">
-          <img src="img/espelho-banheiro.jpg" alt="Espelho grande sobre a bancada de um banheiro" width="499" height="499" loading="lazy">
-          <img src="img/molduras-amostras.jpg" alt="Amostras de moldura em madeira, dourado e cores" width="1200" height="1600" loading="lazy">
-          <img src="img/fechamento-janelas.jpg" alt="Janelas de vidro novas na frente de uma casa" width="864" height="480" loading="lazy">
+          <img class="is-on" src="/vidracaria-real/img/box-banheiro.jpg" alt="Box de vidro temperado com perfil preto em um banheiro" width="540" height="903">
+          <img src="/vidracaria-real/img/fechamento-casa.jpg" alt="Varanda de uma casa fechada com painéis de vidro de correr" width="1200" height="675" loading="lazy">
+          <img src="/vidracaria-real/img/guarda-corpo-escada.jpg" alt="Guarda-corpo de vidro com corrimão de inox ao lado de uma escada" width="540" height="960" loading="lazy">
+          <img src="/vidracaria-real/img/espelho-banheiro.jpg" alt="Espelho grande sobre a bancada de um banheiro" width="499" height="499" loading="lazy">
+          <img src="/vidracaria-real/img/molduras-amostras.jpg" alt="Amostras de moldura em madeira, dourado e cores" width="1200" height="1600" loading="lazy">
+          <img src="/vidracaria-real/img/fechamento-janelas.jpg" alt="Janelas de vidro novas na frente de uma casa" width="864" height="480" loading="lazy">
         </div>
       </div>
     </div>
@@ -284,11 +275,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <p>Fotos de obras e da loja, publicadas no perfil da Real no Google.</p>
       </div>
       <div class="gallery">
-        <figure class="g1"><img src="img/sacadas-vidro.jpg" alt="Sacadas de prédio com guarda-corpo de vidro" width="2400" height="1350" loading="lazy"><figcaption>Sacadas</figcaption></figure>
-        <figure class="g2"><img src="img/quadros-emoldurados.jpg" alt="Parede da loja com quadros emoldurados e um espelho de moldura dourada" width="1200" height="1926" loading="lazy"><figcaption>Quadros</figcaption></figure>
-        <figure class="g3"><img src="img/corrimao-escada.jpg" alt="Escada com guarda-corpo de vidro e corrimão de inox" width="480" height="672" loading="lazy"><figcaption>Corrimão</figcaption></figure>
-        <figure class="g4"><img src="img/guarda-corpo-terraco.jpg" alt="Guarda-corpo de vidro sendo instalado em um terraço" width="2400" height="1350" loading="lazy"><figcaption>Guarda-corpo</figcaption></figure>
-        <figure class="g5"><img src="img/molduras-amostras.jpg" alt="Amostras de moldura em madeira, dourado e cores" width="1200" height="1600" loading="lazy"><figcaption>Molduras</figcaption></figure>
+        <figure class="g1"><img src="/vidracaria-real/img/sacadas-vidro.jpg" alt="Sacadas de prédio com guarda-corpo de vidro" width="2400" height="1350" loading="lazy"><figcaption>Sacadas</figcaption></figure>
+        <figure class="g2"><img src="/vidracaria-real/img/quadros-emoldurados.jpg" alt="Parede da loja com quadros emoldurados e um espelho de moldura dourada" width="1200" height="1926" loading="lazy"><figcaption>Quadros</figcaption></figure>
+        <figure class="g3"><img src="/vidracaria-real/img/corrimao-escada.jpg" alt="Escada com guarda-corpo de vidro e corrimão de inox" width="480" height="672" loading="lazy"><figcaption>Corrimão</figcaption></figure>
+        <figure class="g4"><img src="/vidracaria-real/img/guarda-corpo-terraco.jpg" alt="Guarda-corpo de vidro sendo instalado em um terraço" width="2400" height="1350" loading="lazy"><figcaption>Guarda-corpo</figcaption></figure>
+        <figure class="g5"><img src="/vidracaria-real/img/molduras-amostras.jpg" alt="Amostras de moldura em madeira, dourado e cores" width="1200" height="1600" loading="lazy"><figcaption>Molduras</figcaption></figure>
       </div>
     </div>
   </section>
@@ -296,7 +287,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <section class="section" id="avaliacoes" aria-labelledby="avaliacoes-h">
     <div class="wrap reviews">
       <div class="reviews__photo">
-        <img src="img/molduras-parede.jpg" alt="Parede da loja com dezenas de modelos de moldura lado a lado" width="1200" height="914" loading="lazy">
+        <img src="/vidracaria-real/img/molduras-parede.jpg" alt="Parede da loja com dezenas de modelos de moldura lado a lado" width="1200" height="914" loading="lazy">
         <span class="since"><small>DESDE</small>1994</span>
       </div>
       <div>
@@ -359,6 +350,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     li.addEventListener('focus', () => pick(li));
     li.addEventListener('click', () => pick(li));
   });
+  const fab = document.querySelector('.fab'), heroBtn = document.querySelector('.actions');
+  new IntersectionObserver(([e]) => fab.classList.toggle('is-on', !e.isIntersecting && e.boundingClientRect.top < 0)).observe(heroBtn);
 })();
 </script>
 </body>
