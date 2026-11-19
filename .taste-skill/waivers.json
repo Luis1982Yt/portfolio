@@ -1,0 +1,27 @@
+[
+ {
+  "check": "phone-number",
+  "target": "wa.me/5551995837188",
+  "reason": "É o WhatsApp real do próprio Luís, que ele deu como canal principal de contato; não é número inventado."
+ },
+ {
+  "check": "copy-headings",
+  "target": "Apresenta o Confortize",
+  "reason": "Títulos em português: 'Serviços e preços', 'Perguntas' e títulos de card com verbo e objeto; o verificador só reconhece substantivos de seção em inglês."
+ },
+ {
+  "check": "photo-upscale",
+  "target": "Tela do sist",
+  "reason": "O único print do app Confortize tem 310 px e aparece inteiro (contain) a cerca de 340 px no quadro; o Luís precisa mandar um print maior."
+ },
+ {
+  "check": "hero-lines",
+  "target": "section.hero h1",
+  "reason": "O h1 final tem 34 caracteres em 2 linhas; o teste enche até 43 e as três fontes sorteadas dão 4 linhas em 1440."
+ },
+ {
+  "check": "no-visual",
+  "target": "section#perguntas",
+  "reason": "sections.md permite uma seção de FAQ sem imagem; é a única e não fica ao lado da seção de frase."
+ }
+]
