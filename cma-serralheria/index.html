@@ -1,0 +1,301 @@
+<!doctype html>
+<!-- CMA Serralheria e Funilaria: prévia feita por Luís Antônio.
+     Base visual: design-taste-frontend (estrutura e regras), frontend-design (direção própria para o ramo),
+     awesome-design-md (referência "nike": tipografia condensada grande, foto do trabalho em destaque, uma cor de ação).
+     Cor de destaque: laranja zarcão, a tinta de fundo que todo serralheiro usa no ferro. Fontes Barlow Condensed + Barlow. -->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CMA Serralheria e Funilaria: portões, grades e estruturas em Novo Hamburgo</title>
+<meta name="description" content="Portões, grades, coberturas e estruturas metálicas, com conserto de portão 24 horas, todos os dias. Nota 5,0 no Google. Orçamento pelo WhatsApp.">
+<meta property="og:title" content="CMA Serralheria e Funilaria, atendimento 24 horas">
+<meta property="og:description" content="Portões, grades, coberturas e estruturas metálicas em Novo Hamburgo. Orçamento pelo WhatsApp.">
+<meta property="og:image" content="/cma-serralheria/share.jpg">
+<meta name="theme-color" content="#1d1f21">
+<link rel="icon" href="/cma-serralheria/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/cma-serralheria/fonts/barlow-condensed-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Barlow Condensed";font-weight:600;font-display:swap;src:url(/cma-serralheria/fonts/barlow-condensed-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-weight:700;font-display:swap;src:url(/cma-serralheria/fonts/barlow-condensed-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-weight:400;font-display:swap;src:url(/cma-serralheria/fonts/barlow-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-weight:500;font-display:swap;src:url(/cma-serralheria/fonts/barlow-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-weight:600;font-display:swap;src:url(/cma-serralheria/fonts/barlow-latin-600-normal.woff2) format("woff2")}
+:root{
+  --ink:#1d1f21; --steel:#3b4045; --body:#4f555b; --concrete:#ecebe7; --paper:#f7f6f3; --line:#d6d3cc;
+  --zarcao:#c4471b; --zarcao-dark:#a33a14; --on-dark:#c9ccd0;
+  --display:"Barlow Condensed","Arial Narrow",sans-serif; --text:"Barlow",system-ui,sans-serif;
+  --wrap:min(1200px,calc(100% - 48px));
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;accent-color:var(--zarcao);-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--text)}
+::selection{background:var(--zarcao);color:#fff}
+a{color:inherit;text-decoration:none;touch-action:manipulation}
+img{display:block;max-width:100%}
+h1,h2,h3,p,ul,ol,figure,blockquote{margin:0}
+h1,h2{font-family:var(--display);font-weight:700;text-transform:none;letter-spacing:-.005em;line-height:.98;text-wrap:balance}
+h2{font-size:clamp(40px,4.6vw,64px)}
+section[id]{scroll-margin-top:84px}
+.wrap{width:var(--wrap);margin-inline:auto}
+:focus-visible{outline:3px solid var(--zarcao);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:8px;z-index:50;background:var(--ink);color:#fff;padding:10px 14px}
+.skip:focus{left:16px}
+
+header{position:sticky;top:0;z-index:20;background:rgba(29,31,33,.97);color:#fff}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:70px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo__mark{display:grid;place-items:center;width:44px;height:44px;background:var(--zarcao);font:700 21px/1 var(--display);letter-spacing:.02em}
+.logo__name{font:600 15px/1.15 var(--text);color:var(--on-dark)}
+.logo__name b{display:block;color:#fff;font:700 21px/1 var(--display);letter-spacing:.01em}
+nav{display:flex;align-items:center;gap:28px;font-size:15px;font-weight:500;color:var(--on-dark)}
+nav a:not(.btn):hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 24px;background:var(--zarcao);color:#fff;font:600 16px/1 var(--text);transition:background .2s,transform .2s}
+.btn:hover{background:var(--zarcao-dark);transform:translateY(-2px)}
+.btn:active{transform:none}
+.btn svg{width:20px;height:20px;flex:none}
+.btn--line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.btn--line:hover{background:var(--ink);color:#fff}
+
+/* hero: texto + foto grande, com o 24 h como marca */
+.hero{background:var(--concrete)}
+.hero__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:stretch;padding:64px 0}
+.hero__copy{display:flex;flex-direction:column;justify-content:center}
+.hero h1{font-size:clamp(52px,6.4vw,92px)}
+.hero h1 span{color:var(--zarcao)}
+.hero__lead{margin-top:24px;max-width:480px;color:var(--body);font-size:19px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.facts{display:flex;gap:40px;margin-top:44px;padding-top:24px;border-top:2px solid var(--ink)}
+.facts b{display:block;font:700 44px/1 var(--display)}
+.facts span{display:block;margin-top:6px;font-size:14px;color:var(--body);max-width:150px}
+.hero__photo{position:relative;min-height:560px;overflow:hidden}
+.hero__photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.badge24{position:absolute;right:0;bottom:0;background:var(--ink);color:#fff;padding:18px 24px 16px}
+.badge24 b{display:block;font:700 64px/.9 var(--display);color:var(--zarcao)}
+.badge24 span{display:block;margin-top:6px;font-size:14px;color:var(--on-dark)}
+
+.section{padding:104px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:48px}
+.head p{max-width:380px;color:var(--body)}
+
+/* serviços */
+.svc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--line);border:2px solid var(--line)}
+.svc article{background:var(--paper);display:flex;flex-direction:column}
+.svc figure{aspect-ratio:4/3;overflow:hidden}
+.svc img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.svc article:hover img{transform:scale(1.03)}
+.svc div{padding:22px 24px 26px}
+.svc h3{font:700 28px/1.05 var(--display)}
+.svc p{margin-top:8px;color:var(--body);font-size:16px}
+
+/* como chamar */
+.call{background:var(--ink);color:#fff}
+.call h2{color:#fff}
+.call .head p{color:var(--on-dark)}
+.steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;counter-reset:s}
+.steps li{border-top:3px solid var(--zarcao);padding-top:20px}
+.steps h3{font:700 30px/1.05 var(--display)}
+.steps p{margin-top:10px;color:var(--on-dark)}
+.call .btn{margin-top:48px}
+
+/* trabalhos */
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:220px;gap:12px}
+.gallery figure{position:relative;overflow:hidden;background:var(--concrete)}
+.gallery img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gallery figure:hover img{transform:scale(1.03)}
+.g-a{grid-column:span 5;grid-row:span 2}
+.g-b{grid-column:span 4}
+.g-c{grid-column:span 3;grid-row:span 2}
+.g-d{grid-column:span 4}
+
+/* avaliações */
+.reviews{background:var(--concrete)}
+.rev{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,2fr);gap:64px;align-items:start}
+.score b{display:block;font:700 120px/.85 var(--display)}
+.score span{display:block;margin-top:12px;color:var(--body)}
+.quotes{display:grid;gap:28px}
+.quotes figure{border-left:3px solid var(--zarcao);padding-left:24px}
+.quotes blockquote{font:500 22px/1.45 var(--text);color:var(--ink)}
+.quotes figcaption{margin-top:8px;font-size:15px;color:var(--body);font-weight:600}
+
+/* fechamento */
+.close{background:var(--zarcao);color:#fff}
+.close .wrap{display:flex;justify-content:space-between;align-items:center;gap:32px;padding:72px 0}
+.close h2{color:#fff;font-size:clamp(44px,5vw,72px)}
+.close p{margin-top:12px;font-size:18px;color:#fde3d7}
+.close .btn{background:#fff;color:var(--ink)}
+.close .btn:hover{background:var(--ink);color:#fff}
+footer{background:var(--ink);color:var(--on-dark);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:28px 0}
+.fab{display:none}
+
+@media (max-width:900px){
+  nav a:not(.btn){display:none}
+  .hero__grid{grid-template-columns:1fr;gap:32px;padding:40px 0 0}
+  .hero__photo{min-height:380px;margin:0 -24px}
+  .svc{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr;gap:28px}
+  .rev{grid-template-columns:1fr;gap:32px}
+  .gallery{grid-auto-rows:180px}
+  .g-a{grid-column:span 7}.g-b{grid-column:span 5}.g-c{grid-column:span 5}.g-d{grid-column:span 7}
+  .close .wrap{flex-direction:column;align-items:flex-start}
+}
+@media (max-width:560px){
+  :root{--wrap:calc(100% - 32px)}
+  nav .btn{display:none}
+  .hero h1{font-size:54px}
+  .hero__lead{font-size:18px}
+  .actions .btn{width:100%}
+  .facts{gap:24px}
+  .facts b{font-size:38px}
+  .hero__photo{margin:0 -16px;min-height:320px}
+  .section{padding:72px 0}
+  .head{display:block}.head p{margin-top:12px}
+  .svc{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:160px}
+  .g-a,.g-b,.g-c,.g-d{grid-column:span 1;grid-row:span 1}
+  .g-a{grid-column:span 2;grid-row:span 2}
+  .score b{font-size:96px}
+  .close .btn{width:100%}
+  .fab{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;align-items:center;justify-content:center;gap:10px;min-height:54px;background:#1d8e5a;color:#fff;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.25);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .25s,transform .25s}
+  .fab.is-on{opacity:1;transform:none;pointer-events:auto}
+  .fab svg{width:20px;height:20px}
+  body{padding-bottom:78px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#inicio">Pular para o conteúdo</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3Z"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#inicio" aria-label="CMA Serralheria e Funilaria, início">
+      <span class="logo__mark" translate="no">CMA</span>
+      <span class="logo__name"><b>Serralheria</b>e Funilaria</span>
+    </a>
+    <nav aria-label="Principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#trabalhos">Trabalhos</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a class="btn" href="https://wa.me/5551992921956?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Chamar no WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <h1 id="hero-h">Serralheria em Novo Hamburgo, <span>24 horas por dia.</span></h1>
+        <p class="hero__lead">Portões, grades, coberturas e estruturas metálicas feitos sob medida. E conserto de portão a qualquer hora, inclusive no domingo.</p>
+        <div class="actions">
+          <a class="btn" href="https://wa.me/5551992921956?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir orçamento no WhatsApp</a>
+          <a class="btn btn--line" href="#trabalhos">Ver os trabalhos</a>
+        </div>
+        <div class="facts">
+          <div><b>5,0</b><span>nota no Google, em 48 avaliações</span></div>
+          <div><b>7 dias</b><span>atendimento a semana inteira</span></div>
+        </div>
+      </div>
+      <div class="hero__photo">
+        <img src="/cma-serralheria/img/cobertura-metalica.jpg" alt="Cobertura com estrutura metálica sobre a área de uma casa, com jardim na frente" width="1400" height="1859" fetchpriority="high">
+        <div class="badge24"><b>24 h</b><span>Portão estragou? Chama.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="servicos" aria-labelledby="servicos-h">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="servicos-h">Serviços em ferro e metal</h2>
+        <p>Fazemos o serviço novo e também o conserto, da casa ao comércio.</p>
+      </div>
+      <div class="svc">
+        <article><figure><img src="/cma-serralheria/img/portao-grade-2.jpg" alt="Portão de grade preto na frente de uma casa" width="1400" height="1050" loading="lazy"></figure><div><h3>Portões</h3><p>Fabricação e instalação de portões de grade, de correr ou de abrir.</p></div></article>
+        <article><figure><img src="/cma-serralheria/img/portao-garagem.jpg" alt="Portão de garagem e grade na frente de uma casa" width="1400" height="1054" loading="lazy"></figure><div><h3>Conserto de portão</h3><p>Manutenção e reparo de portão, com atendimento 24 horas.</p></div></article>
+        <article><figure><img src="/cma-serralheria/img/grade-protecao.jpg" alt="Grade de proteção instalada em volta de um equipamento" width="1400" height="2489" loading="lazy" style="object-position:50% 45%"></figure><div><h3>Grades de proteção</h3><p>Para janelas, portas, áreas de serviço e equipamentos.</p></div></article>
+        <article><figure><img src="/cma-serralheria/img/cobertura-telhas.jpg" alt="Cobertura metálica com telhas vista de baixo" width="1400" height="782" loading="lazy"></figure><div><h3>Coberturas e estruturas</h3><p>Estrutura metálica para cobertura, sacada, mezanino e comércio.</p></div></article>
+        <article><figure><img src="/cma-serralheria/img/corrimao-escada.jpg" alt="Corrimão de metal ao lado de uma escada" width="1400" height="2489" loading="lazy" style="object-position:50% 50%"></figure><div><h3>Corrimãos e escadas</h3><p>Corrimão e guarda-corpo para escadas internas e externas.</p></div></article>
+        <article><figure><img src="/cma-serralheria/img/porta-grade.jpg" alt="Porta de grade em um corredor de tijolos" width="1400" height="1867" loading="lazy" style="object-position:50% 45%"></figure><div><h3>Portas e funilaria</h3><p>Porta de grade, porta de aço e funilaria para o que precisar.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section call" id="como-chamar" aria-labelledby="chamar-h">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="chamar-h">Orçamento pelo WhatsApp</h2>
+        <p>Não precisa saber o nome da peça nem a medida certa.</p>
+      </div>
+      <ol class="steps">
+        <li><h3>Mande foto ou vídeo</h3><p>Grave o portão, a grade ou o lugar onde quer o serviço e envie pelo WhatsApp.</p></li>
+        <li><h3>Receba o orçamento</h3><p>Analisamos o que precisa ser feito e passamos o valor antes de começar.</p></li>
+        <li><h3>Serviço no local</h3><p>Combinamos o dia, ou vamos na hora se for urgência.</p></li>
+      </ol>
+      <a class="btn" href="https://wa.me/5551992921956?text=Ol%C3%A1!%20Vou%20mandar%20uma%20foto%20do%20servi%C3%A7o." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Mandar foto no WhatsApp</a>
+    </div>
+  </section>
+
+  <section class="section" id="trabalhos" aria-labelledby="trabalhos-h">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="trabalhos-h">Trabalhos entregues</h2>
+        <p>Fotos de serviços feitos pela CMA, publicadas no perfil do Google.</p>
+      </div>
+      <div class="gallery">
+        <figure class="g-a"><img src="/cma-serralheria/img/portao-grade.jpg" alt="Portão de grade de duas folhas na entrada de uma casa" width="1400" height="1867" loading="lazy"></figure>
+        <figure class="g-b"><img src="/cma-serralheria/img/estrutura-comercial.jpg" alt="Estrutura metálica de um quiosque comercial" width="1400" height="788" loading="lazy"></figure>
+        <figure class="g-c"><img src="/cma-serralheria/img/estrutura-sacada.jpg" alt="Sacada com estrutura metálica e cobertura no segundo andar" width="864" height="1920" loading="lazy"></figure>
+        <figure class="g-d"><img src="/cma-serralheria/img/portao-garagem.jpg" alt="Casa com grade e portão de garagem" width="1400" height="1054" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reviews" id="avaliacoes" aria-labelledby="avaliacoes-h">
+    <div class="wrap rev">
+      <div class="score">
+        <h2 id="avaliacoes-h">Avaliações no Google</h2>
+        <b style="margin-top:28px">5,0</b>
+        <span>de 5, em 48 avaliações</span>
+      </div>
+      <div class="quotes">
+        <figure><blockquote>“Me atendeu no domingo e resolveu as portas que arrebentaram. Foi super atencioso e o serviço muito bom, podem confiar!”</blockquote><figcaption>Marcelo M.</figcaption></figure>
+        <figure><blockquote>“O preço é justo e o trabalho do Caio é profissional, portanto eu recomendo.”</blockquote><figcaption>João Batista F.</figcaption></figure>
+        <figure><blockquote>“O trabalho foi feito conforme o combinado. Os profissionais são capacitados e gentis.”</blockquote><figcaption>Marco Antonio S.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="close" aria-labelledby="close-h">
+    <div class="wrap">
+      <div>
+        <h2 id="close-h">Precisa de um serralheiro?</h2>
+        <p>Atendemos Novo Hamburgo e região, 24 horas, todos os dias.</p>
+      </div>
+      <a class="btn" href="https://wa.me/5551992921956?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Chamar no WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 CMA Serralheria e Funilaria</span>
+    <span>Bairro Rondônia, Novo Hamburgo. WhatsApp (51) 99292-1956</span>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/5551992921956?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Chamar no WhatsApp</a>
+<script>
+(() => {
+  const fab = document.querySelector('.fab'), btns = document.querySelector('.actions');
+  new IntersectionObserver(([e]) => fab.classList.toggle('is-on', !e.isIntersecting && e.boundingClientRect.top < 0)).observe(btns);
+  if (location.hash) addEventListener('load', () => { const t = document.querySelector(location.hash); if (t) t.scrollIntoView({behavior: 'instant'}); });
+})();
+</script>
+</body>
+</html>
