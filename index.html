@@ -47,13 +47,17 @@
 <link rel="modulepreload" href="assets/moments/word-highlight/moment.js">
 <!-- page CSS: only what sits inside a visual, and one --p-h per card group -->
 <style>
-  #trabalhos .panel { --p-h: 340px; }
-  #trabalhos .card p { color: var(--ink); }
+    #trabalhos .card p { color: var(--ink); }
   #trabalhos .panel .frame__img { object-position: 50% 0; }
   /* the Confortize system's phone screenshot, whole on the surface (services-list's picture) */
   #servicos .frame--photo { background: var(--surface); }
   #servicos .frame--photo .frame__img { object-fit: contain; padding: var(--s-6); }
-  @media (max-width: 639px) { #trabalhos .panel { --p-h: 220px; } #servicos .frame--photo { height: 420px; }
+  #trabalhos .panel { --p-h: 260px; }
+  #confortize .phones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-4); align-items: start; }
+  #confortize .phones img { width: 100%; height: auto; border-radius: 18px; box-shadow: 0 12px 32px rgba(40, 10, 14, .14); }
+  #confortize .phones img:nth-child(2) { margin-top: 48px; }
+  @media (max-width: 639px) { #trabalhos .panel { --p-h: 220px; }
+    #confortize .phones img:nth-child(2) { margin-top: 0; } #servicos .frame--photo { height: 420px; }
     /* the phone keeps four of the six questions so the section stays one screen */
     #perguntas .faq__item:nth-child(n+5) { display: none; } }
 </style>
@@ -85,14 +89,15 @@
               <span class="t-card" translate="no">BattleMatch</span>
               <span class="t-small muted">Guia de matchups de League of Legends</span>
             </a>
-            <a class="menu-card span-4" href="#servicos">
-              <div class="panel"><img width="620" height="1342" class="frame__img" src="confortize-app.jpg" alt="Tela do app Confortize no celular"></div>
-              <span class="t-card">App Confortize</span>
-              <span class="t-small muted">Pedidos e orçamentos no celular</span>
+            <a class="menu-card span-4" href="#trabalhos">
+              <div class="panel"><img width="1600" height="1000" class="frame__img" src="vidracaria-real-previa.jpg" alt="Prévia do site da Vidraçaria e Molduras Real"></div>
+              <span class="t-card">Vidraçaria Real</span>
+              <span class="t-small muted">Prévia de site para uma vidraçaria de Canoas</span>
             </a>
           </div>
         </div>
       </div>
+      <div class="nav__item"><a class="nav__link" href="#confortize" translate="no">Confortize</a></div>
       <div class="nav__item"><a class="nav__link" href="#servicos">Preços</a></div>
       <div class="nav__item"><a class="nav__link" href="#perguntas">Perguntas</a></div>
     </nav>
@@ -123,21 +128,27 @@
     </div></div>
   </section>
 
-  <section class="section" id="trabalhos" style="--hm: 2" aria-labelledby="trabalhos-h">
+  <section class="section" id="trabalhos" style="--hm: 3" aria-labelledby="trabalhos-h">
     <div class="wrap">
       <div class="section-head">
-        <h2 id="trabalhos-h">Sites que já estão no ar. <span class="muted">Os dois foram feitos por mim, do layout ao código.</span></h2>
+        <h2 id="trabalhos-h">Sites que eu fiz. <span class="muted">Do layout ao código, testados no celular.</span></h2>
       </div>
       <div class="grid">
-        <article class="card card--row card--open span-6">
+        <article class="card card--row card--open span-4">
+          <h3>Mostra a Vidraçaria Real e o endereço novo</h3>
+          <p>Prévia para a Vidraçaria &amp; Molduras Real, de Canoas, montada com as fotos que a loja já tinha no Google.</p>
+          <div class="panel"><img width="1600" height="1000" class="frame__img" src="vidracaria-real-previa.jpg" alt="Topo da prévia do site da Vidraçaria e Molduras Real com uma sacada de vidro" loading="lazy"></div>
+          <a class="link" href="/vidracaria-real">Abrir a prévia</a>
+        </article>
+        <article class="card card--row card--open span-4">
           <h3>Apresenta o Confortize para instaladores</h3>
           <p>Site do Confortize, meu app de pedidos, orçamentos e agenda para quem instala câmeras e alarmes.</p>
           <div class="panel"><img width="1600" height="1100" class="frame__img" src="confortize-site.jpg" alt="Topo do site do Confortize com o teste grátis" loading="lazy"></div>
           <a class="link" href="https://confortosistemadeseguranca.com.br/">Abrir o site do Confortize</a>
         </article>
-        <article class="card card--row card--open span-6">
+        <article class="card card--row card--open span-4">
           <h3>Mostra os confrontos mais difíceis de cada campeão</h3>
-          <p>BattleMatch, guia de matchups de League of Legends que montei e mantenho no ar na Vercel.</p>
+          <p>BattleMatch, guia de matchups de League of Legends que montei e mantenho no ar.</p>
           <div class="panel"><img width="1100" height="683" class="frame__img" src="battlematch.jpg" alt="Tela do BattleMatch com a escolha de campeão e os confrontos mais difíceis" loading="lazy"></div>
           <a class="link" href="https://battlematch.vercel.app/">Abrir o BattleMatch</a>
         </article>
@@ -149,6 +160,35 @@
     <div class="wrap">
       <p class="t-label">Quando você paga</p>
       <p class="mo-wh__text">Primeiro você recebe a prévia do seu site e pede os ajustes que quiser. Ele só vai pro ar depois que você aprovar e fechar o serviço. Até lá, você não paga <strong>nada</strong>.</p>
+    </div>
+  </section>
+
+  <section class="section" id="confortize" style="--hm: 3" aria-labelledby="confortize-h">
+    <div class="wrap">
+      <div class="grid grid--top fill">
+        <div class="span-5 stack-6">
+          <div class="section-head">
+            <h2 id="confortize-h"><span translate="no">Confortize</span>, o app que eu criei para quem atende na rua</h2>
+            <p>Pedido, orçamento, ordem de serviço e agenda no celular, para quem instala câmeras, alarmes e serviços em campo. Você fala o pedido e a IA preenche o resto.</p>
+          </div>
+          <ul class="rows">
+            <li><span class="rows__name">Pedido falado</span><p>Grave como um áudio de WhatsApp. A IA preenche cliente, itens, valores, pagamento e data.</p></li>
+            <li><span class="rows__name">Orçamento por link com Pix</span><p>O cliente abre no celular, aprova com um toque e paga pelo QR Code, sem baixar nada.</p></li>
+            <li><span class="rows__name">WhatsApp com texto pronto</span><p>Confirmar a visita, avisar que está a caminho e cobrar a resposta do orçamento.</p></li>
+            <li><span class="rows__name">Ordem de serviço do técnico</span><p>Checklist, fotos e assinatura do cliente na tela do celular.</p></li>
+          </ul>
+          <p class="t-small muted">Planos a partir de R$ 29,90 por mês, com 7 dias grátis.</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="https://confortosistemadeseguranca.com.br/app/cadastro.html">Testar o Confortize grátis</a>
+            <a class="btn btn--secondary" href="https://confortosistemadeseguranca.com.br/">Conhecer o app</a>
+          </div>
+        </div>
+        <div class="span-6 start-7 phones">
+          <img width="780" height="1688" src="confortize-app.jpg" alt="Tela do Confortize com o pedido preenchido pela IA a partir de um áudio" loading="lazy" data-source="client">
+          <img width="780" height="1688" src="confortize-orcamento-link.jpg" alt="Orçamento do Confortize aberto pelo cliente no celular, com botão para aprovar" loading="lazy" data-source="client">
+          <img width="780" height="1688" src="confortize-tecnico-os.jpg" alt="Ordem de serviço do técnico com checklist e assinatura no Confortize" loading="lazy" data-source="client">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -168,7 +208,7 @@
           </ul>
         </div>
         <div class="frame frame--photo frame--fill span-6 start-7">
-          <img width="620" height="1342" class="frame__img" src="confortize-app.jpg" alt="Tela de atendimento do app Confortize aberta no celular" loading="lazy" data-source="client" data-subject="aplicativo feito pelo Luís">
+          <img width="780" height="1688" class="frame__img" src="confortize-whatsapp.jpg" alt="Tela do Confortize com a mensagem de WhatsApp pronta para o cliente" loading="lazy" data-source="client" data-subject="aplicativo feito pelo Luís">
         </div>
       </div>
     </div>
@@ -210,7 +250,7 @@
           <a class="nav__logo" href="#top">Luís Antônio</a>
           <p class="footer__lede">Sites para pequenos negócios do RS, feitos em Estância Velha.</p>
         </div>
-        <div class="span-2 footer__col"><h3>Trabalhos</h3><ul><li><a href="https://confortosistemadeseguranca.com.br/" translate="no">Confortize</a></li><li><a href="https://battlematch.vercel.app/">BattleMatch</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Trabalhos</h3><ul><li><a href="https://confortosistemadeseguranca.com.br/" translate="no">Confortize</a></li><li><a href="https://battlematch.vercel.app/">BattleMatch</a></li><li><a href="/vidracaria-real">Vidraçaria Real</a></li></ul></div>
         <div class="span-2 footer__col"><h3>Preços</h3><ul><li><a href="#servicos">Serviços</a></li><li><a href="#perguntas">Perguntas</a></li></ul></div>
         <div class="span-2 footer__col"><h3>Contato</h3><ul><li><a href="mailto:luiskoch7@gmail.com">Mandar e-mail</a></li><li><a href="#prazo">Quando você paga</a></li></ul></div>
         <div class="span-2 footer__col"><h3>Vídeo</h3><ul><li><a href="https://www.youtube.com/@Duduhhlol1">Canal Duduhh</a></li></ul></div>
