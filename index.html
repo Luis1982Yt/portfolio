@@ -61,7 +61,9 @@
   #previas .panel { height: auto; aspect-ratio: 1440 / 740; }
   #previas .panel .frame__img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
   .hero__media { background: transparent; }
-  .hero__media > img { object-fit: contain; }
+  .hero__media > img { object-fit: contain; border-radius: var(--r-lg); }
+  @media (max-width: 1023px) { .hero--split .hero__media { flex: none; min-height: 0; }
+    .hero__media > img { position: static; height: auto; aspect-ratio: 1320 / 1500; object-fit: cover; } }
   #confortize .phones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-4); align-items: start; }
   #confortize .phones img { width: 100%; height: auto; border-radius: 18px; box-shadow: 0 12px 32px rgba(40, 10, 14, .14); }
   #confortize .phones img:nth-child(2) { margin-top: 48px; }
@@ -131,7 +133,7 @@
         </div>
       </div>
       <div class="hero__media span-6 start-7">
-        <img width="1320" height="1500" src="hero-previas.jpg" alt="Três prévias de sites feitas pelo Luís: uma vidraçaria no computador, uma serralheria e uma oficina no celular" style="--ly-pos: 50% 50%" fetchpriority="high" data-source="client" data-subject="sites feitos pelo Luís">
+        <img width="1320" height="1500" src="confortize-hero.jpg" alt="App Confortize no celular: o pedido falado pelo instalador vira um formulário preenchido pela IA" style="--ly-pos: 50% 50%" fetchpriority="high" data-source="client" data-subject="sites feitos pelo Luís">
       </div>
     </div></div>
   </section>
