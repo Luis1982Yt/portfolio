@@ -52,21 +52,21 @@
     #trabalhos .card p { color: var(--ink); }
   #trabalhos .panel .frame__img { object-position: 50% 0; }
   /* the Confortize system's phone screenshot, whole on the surface (services-list's picture) */
-  #servicos { margin-top: var(--s-8); }
+  @media (min-width: 1024px) { #servicos { margin-top: var(--s-8); } }
   #servicos .plans { margin-top: var(--s-6); align-items: stretch; }
   #servicos .card--plan { display: flex; flex-direction: column; }
   #servicos .card--plan .price { margin: 0; }
-  #servicos .extras { margin-top: var(--s-8, 48px); max-width: 820px; }
+  #servicos .extras { margin-top: var(--s-8, 48px); }
   #trabalhos .panel { --p-h: 320px; }
-  #previas .panel { height: auto; aspect-ratio: 1440 / 740; }
-  #previas .panel .frame__img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
   .hero__media { background: transparent; }
-  .hero__media > img { object-fit: contain; border-radius: var(--r-lg); }
-  @media (max-width: 1023px) { .hero--split .hero__media { flex: none; min-height: 0; }
-    .hero__media > img { position: static; height: auto; aspect-ratio: 1320 / 1500; object-fit: cover; } }
+  footer .footer__col a { display: inline-block; padding-block: 6px; }
+  /* a imagem do topo no tamanho dela, com cantos arredondados de verdade (sem sobra em volta) */
+  .hero--split .hero__media { height: auto; min-height: 0; flex: none; align-self: center; border-radius: var(--r-lg); box-shadow: 0 24px 60px rgba(40, 10, 14, .18); }
+  .hero__media > img { position: static; display: block; width: 100%; height: auto; aspect-ratio: 1320 / 1500; object-fit: cover; }
   #confortize .phones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-4); align-items: start; }
   #confortize .phones img { width: 100%; height: auto; border-radius: 18px; box-shadow: 0 12px 32px rgba(40, 10, 14, .14); }
   #confortize .phones img:nth-child(2) { margin-top: 48px; }
+  @media (max-width: 1023px) { #confortize { height: auto !important; min-height: 0 !important; grid-template-rows: auto !important; } #confortize > .wrap, #confortize .fill { flex: none !important; height: auto !important; min-height: 0 !important; } #confortize .phones { display: grid !important; margin-top: var(--s-6); } }
   @media (max-width: 639px) { #trabalhos .panel { --p-h: 220px; }
     #confortize .phones img:nth-child(2) { margin-top: 0; }
     /* the phone keeps four of the six questions so the section stays one screen */
@@ -99,11 +99,6 @@
               <div class="panel"><img width="1100" height="683" class="frame__img" src="battlematch.jpg" alt="Tela de escolha de campeão do BattleMatch"></div>
               <span class="t-card" translate="no">BattleMatch</span>
               <span class="t-small muted">Guia de matchups de League of Legends</span>
-            </a>
-            <a class="menu-card span-4" href="#previas">
-              <div class="panel"><img width="1440" height="740" class="frame__img" src="previa-serralheria.jpg" alt="Prévia de site para uma serralheria"></div>
-              <span class="t-card">Prévias prontas</span>
-              <span class="t-small muted">Sites montados para negócios da região</span>
             </a>
           </div>
         </div>
@@ -155,36 +150,6 @@
           <p>BattleMatch, guia de matchups de League of Legends que montei e mantenho no ar.</p>
           <div class="panel"><img width="1100" height="683" class="frame__img" src="battlematch.jpg" alt="Tela do BattleMatch com a escolha de campeão e os confrontos mais difíceis" loading="lazy"></div>
           <a class="link" href="https://battlematch.vercel.app/">Abrir o BattleMatch</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="previas" aria-labelledby="previas-h">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="previas-h">Prévias prontas. <span class="muted">Montadas com as fotos que cada negócio já tinha no Google.</span></h2>
-      </div>
-      <div class="grid">
-        <article class="card card--row card--open span-6">
-          <div class="panel panel--top"><img width="1440" height="740" class="frame__img" src="previa-vidracaria.jpg" alt="Topo de uma prévia de site para vidraçaria, com uma sacada de vidro" loading="lazy"></div>
-          <h3>Vidraçaria em Canoas</h3>
-          <p>Box, sacadas e molduras, com o endereço novo da loja em destaque.</p>
-        </article>
-        <article class="card card--row card--open span-6">
-          <div class="panel panel--top"><img width="1440" height="740" class="frame__img" src="previa-serralheria.jpg" alt="Topo de uma prévia de site para serralheria, com uma cobertura metálica" loading="lazy"></div>
-          <h3>Serralheria em Novo Hamburgo</h3>
-          <p>Portões e coberturas, com o atendimento 24 horas na primeira tela.</p>
-        </article>
-        <article class="card card--row card--open span-6">
-          <div class="panel panel--top"><img width="1440" height="740" class="frame__img" src="previa-funilaria.jpg" alt="Seção de uma prévia de site para funilaria com quatro etapas do serviço" loading="lazy"></div>
-          <h3>Funilaria em Canoas</h3>
-          <p>Lataria, pintura e estética, mostrando o caminho do carro pela oficina.</p>
-        </article>
-        <article class="card card--row card--open span-6">
-          <div class="panel panel--top"><img width="1440" height="740" class="frame__img" src="previa-oficina.jpg" alt="Seção de uma prévia de site para oficina com fotos de antes e depois" loading="lazy"></div>
-          <h3>Oficina em Campo Bom</h3>
-          <p>Recuperação de batidas, com fotos de como o carro chega e como sai.</p>
         </article>
       </div>
     </div>
@@ -300,7 +265,7 @@
           <a class="nav__logo" href="#top">Luís Antônio</a>
           <p class="footer__lede">Sites para pequenos negócios do RS, feitos em Estância Velha.</p>
         </div>
-        <div class="span-2 footer__col"><h3>Trabalhos</h3><ul><li><a href="https://confortosistemadeseguranca.com.br/" translate="no">Confortize</a></li><li><a href="https://battlematch.vercel.app/">BattleMatch</a></li><li><a href="#previas">Prévias prontas</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Trabalhos</h3><ul><li><a href="https://confortosistemadeseguranca.com.br/" translate="no">Confortize</a></li><li><a href="https://battlematch.vercel.app/">BattleMatch</a></li></ul></div>
         <div class="span-2 footer__col"><h3>Preços</h3><ul><li><a href="#servicos">Serviços</a></li><li><a href="#perguntas">Perguntas</a></li></ul></div>
         <div class="span-2 footer__col"><h3>Contato</h3><ul><li><a href="mailto:luiskoch7@gmail.com">Mandar e-mail</a></li><li><a href="#prazo">Quando você paga</a></li></ul></div>
         <div class="span-2 footer__col"><h3>Vídeo</h3><ul><li><a href="https://www.youtube.com/@Duduhhlol1">Canal Duduhh</a></li></ul></div>
