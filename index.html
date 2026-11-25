@@ -54,7 +54,9 @@
   #servicos .card--plan { display: flex; flex-direction: column; }
   #servicos .card--plan .price { margin: 0; }
   #servicos .extras { margin-top: var(--s-8, 48px); max-width: 820px; }
-  #trabalhos .panel { --p-h: 260px; }
+  #trabalhos .panel { --p-h: 320px; }
+  #previas .panel { --p-h: 200px; }
+  #previas .panel .frame__img { object-position: 50% 0; }
   #confortize .phones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-4); align-items: start; }
   #confortize .phones img { width: 100%; height: auto; border-radius: 18px; box-shadow: 0 12px 32px rgba(40, 10, 14, .14); }
   #confortize .phones img:nth-child(2) { margin-top: 48px; }
@@ -91,10 +93,10 @@
               <span class="t-card" translate="no">BattleMatch</span>
               <span class="t-small muted">Guia de matchups de League of Legends</span>
             </a>
-            <a class="menu-card span-4" href="#trabalhos">
-              <div class="panel"><img width="1600" height="1000" class="frame__img" src="vidracaria-real-previa.jpg" alt="Prévia do site da Vidraçaria e Molduras Real"></div>
-              <span class="t-card">Vidraçaria Real</span>
-              <span class="t-small muted">Prévia de site para uma vidraçaria de Canoas</span>
+            <a class="menu-card span-4" href="#previas">
+              <div class="panel"><img width="1440" height="900" class="frame__img" src="previa-serralheria.jpg" alt="Prévia de site para uma serralheria"></div>
+              <span class="t-card">Prévias prontas</span>
+              <span class="t-small muted">Sites montados para negócios da região</span>
             </a>
           </div>
         </div>
@@ -116,9 +118,8 @@
   <section class="hero hero--split" data-enter aria-labelledby="hero-h">
     <div class="wrap"><div class="hero-text grid hero__grid">
       <div class="hero__text span-5">
-        <p class="hero__kicker"><span class="dot" aria-hidden="true"></span>Sites a partir de R$ 800, em até 3x no Pix</p>
-        <h1 id="hero-h">Sites para pequenos negócios do RS</h1>
-        <p class="hero__lead">Site com seus serviços, fotos e botão do WhatsApp. Você vê a prévia de graça e só paga se gostar.</p>
+                <h1 id="hero-h">Sites para pequenos negócios do RS</h1>
+        <p class="hero__lead">Site com seus serviços, fotos e botão do WhatsApp, a partir de R$ 800 em até 6x no Pix. Você vê a prévia de graça e só paga se gostar.</p>
         <div class="btn-row">
           <a class="btn btn--primary" href="https://wa.me/5551995837188?text=Oi%20Lu%C3%ADs!%20Quero%20uma%20pr%C3%A9via%20gr%C3%A1tis%20do%20meu%20site.">Pedir prévia grátis<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
           <a class="btn btn--secondary" href="#trabalhos">Ver trabalhos</a>
@@ -136,19 +137,13 @@
         <h2 id="trabalhos-h">Sites que eu fiz. <span class="muted">Do layout ao código, testados no celular.</span></h2>
       </div>
       <div class="grid">
-        <article class="card card--row card--open span-4">
-          <h3>Mostra a Vidraçaria Real e o endereço novo</h3>
-          <p>Prévia para a Vidraçaria &amp; Molduras Real, de Canoas, montada com as fotos que a loja já tinha no Google.</p>
-          <div class="panel"><img width="1600" height="1000" class="frame__img" src="vidracaria-real-previa.jpg" alt="Topo da prévia do site da Vidraçaria e Molduras Real com uma sacada de vidro" loading="lazy"></div>
-          <a class="link" href="/vidracaria-real">Abrir a prévia</a>
-        </article>
-        <article class="card card--row card--open span-4">
+        <article class="card card--row card--open span-6">
           <h3>Apresenta o Confortize para instaladores</h3>
           <p>Site do Confortize, meu app de pedidos, orçamentos e agenda para quem instala câmeras e alarmes.</p>
           <div class="panel"><img width="1600" height="1100" class="frame__img" src="confortize-site.jpg" alt="Topo do site do Confortize com o teste grátis" loading="lazy"></div>
           <a class="link" href="https://confortosistemadeseguranca.com.br/">Abrir o site do Confortize</a>
         </article>
-        <article class="card card--row card--open span-4">
+        <article class="card card--row card--open span-6">
           <h3>Mostra os confrontos mais difíceis de cada campeão</h3>
           <p>BattleMatch, guia de matchups de League of Legends que montei e mantenho no ar.</p>
           <div class="panel"><img width="1100" height="683" class="frame__img" src="battlematch.jpg" alt="Tela do BattleMatch com a escolha de campeão e os confrontos mais difíceis" loading="lazy"></div>
@@ -158,9 +153,38 @@
     </div>
   </section>
 
+  <section class="section" id="previas" aria-labelledby="previas-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="previas-h">Prévias prontas. <span class="muted">Montadas com as fotos que cada negócio já tinha no Google.</span></h2>
+      </div>
+      <div class="grid">
+        <article class="card card--row card--open span-3">
+          <div class="panel panel--top"><img width="1440" height="900" class="frame__img" src="previa-vidracaria.jpg" alt="Topo de uma prévia de site para vidraçaria, com uma sacada de vidro" loading="lazy"></div>
+          <h3>Vidraçaria em Canoas</h3>
+          <p>Box, sacadas e molduras, com o endereço novo da loja em destaque.</p>
+        </article>
+        <article class="card card--row card--open span-3">
+          <div class="panel panel--top"><img width="1440" height="900" class="frame__img" src="previa-serralheria.jpg" alt="Topo de uma prévia de site para serralheria, com uma cobertura metálica" loading="lazy"></div>
+          <h3>Serralheria em Novo Hamburgo</h3>
+          <p>Portões e coberturas, com o atendimento 24 horas na primeira tela.</p>
+        </article>
+        <article class="card card--row card--open span-3">
+          <div class="panel panel--top"><img width="1440" height="900" class="frame__img" src="previa-funilaria.jpg" alt="Seção de uma prévia de site para funilaria com quatro etapas do serviço" loading="lazy"></div>
+          <h3>Funilaria em Canoas</h3>
+          <p>Lataria, pintura e estética, mostrando o caminho do carro pela oficina.</p>
+        </article>
+        <article class="card card--row card--open span-3">
+          <div class="panel panel--top"><img width="1440" height="900" class="frame__img" src="previa-oficina.jpg" alt="Seção de uma prévia de site para oficina com fotos de antes e depois" loading="lazy"></div>
+          <h3>Oficina em Campo Bom</h3>
+          <p>Recuperação de batidas, com fotos de como o carro chega e como sai.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section class="section statement" id="prazo" data-moment="word-highlight" aria-label="Quando você paga">
     <div class="wrap">
-      <p class="t-label">Quando você paga</p>
       <p class="mo-wh__text">Primeiro você recebe a prévia do seu site e pede os ajustes que quiser. Ele só vai pro ar depois que você aprovar e fechar o serviço. Até lá, você não paga <strong>nada</strong>.</p>
     </div>
   </section>
@@ -194,18 +218,18 @@
     </div>
   </section>
 
-  <section class="section" id="servicos" style="--hm: 2" aria-labelledby="servicos-h">
+  <section class="section" id="servicos" style="--h: 2" aria-labelledby="servicos-h">
     <div class="wrap">
       <div class="section-head">
         <h2 id="servicos-h">Serviços e preços</h2>
-        <p>Pago uma vez, em até 3x no Pix. A prévia é grátis em qualquer plano.</p>
+        <p>Pago uma vez, em até 6x no Pix. A prévia é grátis em qualquer plano.</p>
       </div>
       <div class="grid grid--top plans">
         <article class="card card--plan span-4">
           <h3>Site Essencial</h3>
           <p class="muted">Pra aparecer no Google e receber contato pelo WhatsApp.</p>
           <p class="price"><span class="t-stat">R$ 800</span></p>
-          <p class="t-small muted">Em até 3x no Pix.</p>
+          <p class="t-small muted">Em até 6x no Pix.</p>
           <a class="btn btn--secondary" href="https://wa.me/5551995837188?text=Oi%20Lu%C3%ADs%21%20Quero%20saber%20mais%20do%20Site%20Essencial.">Quero o Site Essencial</a>
           <ul class="checks"><li>Uma página com serviços, fotos e avaliações</li><li>Botão do WhatsApp e mapa do endereço</li><li>Pronto pra celular e ligado ao perfil do Google</li><li>1 rodada de ajustes antes de ir pro ar</li></ul>
         </article>
@@ -213,7 +237,7 @@
           <h3>Site Completo <span class="badge">Recomendado</span></h3>
           <p class="muted">Pra quem quer várias páginas e pedidos de orçamento pelo site.</p>
           <p class="price"><span class="t-stat">R$ 1.600</span></p>
-          <p class="t-small muted">Em até 3x no Pix.</p>
+          <p class="t-small muted">Em até 6x no Pix.</p>
           <a class="btn btn--primary" href="https://wa.me/5551995837188?text=Oi%20Lu%C3%ADs%21%20Quero%20saber%20mais%20do%20Site%20Completo.">Quero o Site Completo</a>
           <ul class="checks"><li>Tudo do Site Essencial</li><li>Até 5 páginas: serviços, galeria, sobre e contato</li><li>Formulário de orçamento que chega no seu WhatsApp</li><li>Textos pensados pra aparecer nas buscas do Google</li><li>Relatório de visitas do site</li><li>3 rodadas de ajustes</li></ul>
         </article>
@@ -242,7 +266,7 @@
           <a class="link" href="https://wa.me/5551995837188?text=Oi%20Lu%C3%ADs!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20site.">Mandar uma dúvida no WhatsApp</a>
         </div>
         <div class="faq span-6 start-7">
-          <div class="faq__item"><h3>Quanto custa o site?</h3><p>A partir de R$ 800 no Site Essencial, R$ 1.600 no Site Completo e a partir de R$ 3.000 com sistema. Dá pra pagar em até 3x no Pix.</p></div>
+          <div class="faq__item"><h3>Quanto custa o site?</h3><p>A partir de R$ 800 no Site Essencial, R$ 1.600 no Site Completo e a partir de R$ 3.000 com sistema. Dá pra pagar em até 6x no Pix.</p></div>
           <div class="faq__item"><h3>A prévia é paga?</h3><p>Não. Eu monto uma prévia do seu site de graça e você decide se quer fechar.</p></div>
           <div class="faq__item"><h3>A manutenção é obrigatória?</h3><p>Não. Ela custa R$ 120 por mês ou R$ 1.200 no ano, e você cancela quando quiser.</p></div>
           <div class="faq__item"><h3>E o domínio .com.br?</h3><p>Vem junto da manutenção. Sem ela, o domínio custa cerca de R$ 40 por ano, pago por você.</p></div>
@@ -269,7 +293,7 @@
           <a class="nav__logo" href="#top">Luís Antônio</a>
           <p class="footer__lede">Sites para pequenos negócios do RS, feitos em Estância Velha.</p>
         </div>
-        <div class="span-2 footer__col"><h3>Trabalhos</h3><ul><li><a href="https://confortosistemadeseguranca.com.br/" translate="no">Confortize</a></li><li><a href="https://battlematch.vercel.app/">BattleMatch</a></li><li><a href="/vidracaria-real">Vidraçaria Real</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Trabalhos</h3><ul><li><a href="https://confortosistemadeseguranca.com.br/" translate="no">Confortize</a></li><li><a href="https://battlematch.vercel.app/">BattleMatch</a></li><li><a href="#previas">Prévias prontas</a></li></ul></div>
         <div class="span-2 footer__col"><h3>Preços</h3><ul><li><a href="#servicos">Serviços</a></li><li><a href="#perguntas">Perguntas</a></li></ul></div>
         <div class="span-2 footer__col"><h3>Contato</h3><ul><li><a href="mailto:luiskoch7@gmail.com">Mandar e-mail</a></li><li><a href="#prazo">Quando você paga</a></li></ul></div>
         <div class="span-2 footer__col"><h3>Vídeo</h3><ul><li><a href="https://www.youtube.com/@Duduhhlol1">Canal Duduhh</a></li></ul></div>
