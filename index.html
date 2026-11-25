@@ -52,7 +52,7 @@
     #trabalhos .card p { color: var(--ink); }
   #trabalhos .panel .frame__img { object-position: 50% 0; }
   /* the Confortize system's phone screenshot, whole on the surface (services-list's picture) */
-  @media (min-width: 1024px) { #servicos { margin-top: var(--s-8); } }
+  @media (min-width: 1024px) { #servicos, #sobre { margin-top: var(--s-8); } }
   #servicos .plans { margin-top: var(--s-6); align-items: stretch; }
   #servicos .plans { align-items: start; }
   #servicos .plans > .card--plan { align-self: start; }
@@ -112,6 +112,7 @@
         </div>
       </div>
       <div class="nav__item"><a class="nav__link" href="#confortize" translate="no">Confortize</a></div>
+      <div class="nav__item"><a class="nav__link" href="#sobre">Sobre</a></div>
       <div class="nav__item"><a class="nav__link" href="#servicos">Preços</a></div>
       <div class="nav__item"><a class="nav__link" href="#perguntas">Perguntas</a></div>
     </nav>
@@ -198,6 +199,24 @@
     </div>
   </section>
 
+  <section class="section" id="sobre" aria-labelledby="sobre-h">
+    <div class="wrap">
+      <div class="grid grid--top">
+        <div class="span-5 stack-4">
+          <h2 id="sobre-h">Quem faz o seu site</h2>
+          <p>Me chamo Luís Antônio, sou de Estância Velha e programo desde a escola técnica. Eu mesmo atendo, desenho, programo e coloco o site no ar. Você fala direto comigo pelo WhatsApp, do primeiro oi até o site pronto.</p>
+          <a class="link" href="https://wa.me/5551995837188?text=Oi%20Lu%C3%ADs!%20Vi%20seu%20portf%C3%B3lio.">Falar comigo no WhatsApp</a>
+        </div>
+        <ul class="rows span-6 start-7">
+          <li><span class="rows__name">Técnico em Informática</span><p>Curso técnico na ETEP, em Portão, com redes, banco de dados e programação.</p><span class="rows__value">2026</span></li>
+          <li><span class="rows__name">Estágio em segurança eletrônica</span><p>Na Conforto Sistemas de Segurança, fiz um gerador de orçamentos e cuidei do diagnóstico de servidores.</p><span class="rows__value">2026</span></li>
+          <li><span class="rows__name"><span translate="no">Confortize</span></span><p>Criei e mantenho no ar um app de pedidos e orçamentos com IA, feito pra quem instala câmeras e alarmes.</p><span class="rows__value">2026</span></li>
+          <li><span class="rows__name">Sistemas de Informação</span><p>Graduação na Feevale, começando em 2027.</p><span class="rows__value">2027</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="servicos" style="--h: 2" aria-labelledby="servicos-h">
     <div class="wrap">
       <div class="section-head">
@@ -209,7 +228,7 @@
           <h3>Site Essencial</h3>
           <p class="muted">Pra aparecer no Google e receber contato pelo WhatsApp.</p>
           <p class="price"><span class="t-stat">R$ 800</span></p>
-          <p class="t-small muted">Em até 6x no Pix.</p>
+          <p class="t-small muted">Até 6x no Pix.</p>
           <a class="btn btn--secondary" href="https://wa.me/5551995837188?text=Oi%20Lu%C3%ADs%21%20Quero%20saber%20mais%20do%20Site%20Essencial.">Quero o Site Essencial</a>
           <ul class="checks"><li>Uma página com serviços e fotos</li><li>Botão do WhatsApp e mapa</li><li>Pronto pra celular e Google</li><li>1 rodada de ajustes</li></ul>
         </article>
@@ -217,7 +236,7 @@
           <h3>Site Completo <span class="badge">Recomendado</span></h3>
           <p class="muted">Pra quem quer mais páginas e receber pedidos pelo site.</p>
           <p class="price"><span class="t-stat">R$ 1.600</span></p>
-          <p class="t-small muted">Em até 10x no Pix ou cartão.</p>
+          <p class="t-small muted">Até 10x no Pix, ou no cartão com juros.</p>
           <a class="btn btn--primary" href="https://wa.me/5551995837188?text=Oi%20Lu%C3%ADs%21%20Quero%20saber%20mais%20do%20Site%20Completo.">Quero o Site Completo</a>
           <ul class="checks"><li>Tudo do Site Essencial</li><li>Até 5 páginas</li><li>Orçamento e agendamento pelo site</li><li>Domínio .com.br no 1º ano</li><li>E-mail profissional</li><li>3 meses de manutenção grátis</li><li>QR Code pro balcão</li><li>Entrega prioritária</li><li>3 rodadas de ajustes</li></ul>
         </article>
@@ -225,7 +244,7 @@
           <h3>Site + Sistema</h3>
           <p class="muted">Pra quem precisa de um sistema próprio, como o Confortize.</p>
           <p class="price"><span class="muted">a partir de</span> <span class="t-stat">R$ 3.000</span></p>
-          <p class="t-small muted">Em até 15x no Pix ou cartão.</p>
+          <p class="t-small muted">Até 15x no Pix, ou no cartão com juros.</p>
           <a class="btn btn--secondary" href="https://wa.me/5551995837188?text=Oi%20Lu%C3%ADs%21%20Quero%20saber%20mais%20do%20Site%20%2B%20Sistema.">Quero o Site + Sistema</a>
           <ul class="checks"><li>Tudo do Site Completo</li><li>Login pra você e a equipe</li><li>Painel de pedidos e clientes</li><li>Funciona como app no celular</li><li>Feito sob medida</li></ul>
         </article>
@@ -246,7 +265,7 @@
           <a class="link" href="https://wa.me/5551995837188?text=Oi%20Lu%C3%ADs!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20site.">Mandar uma dúvida no WhatsApp</a>
         </div>
         <div class="faq span-6 start-7">
-          <div class="faq__item"><h3>Quanto custa o site?</h3><p>A partir de R$ 800 no Site Essencial, R$ 1.600 no Site Completo e a partir de R$ 3.000 com sistema. O Essencial sai em até 6x no Pix, o Completo em até 10x e o sistema em até 15x, no Pix ou no cartão. O valor do sistema depende do que ele precisa fazer.</p></div>
+          <div class="faq__item"><h3>Quanto custa o site?</h3><p>A partir de R$ 800 no Site Essencial, R$ 1.600 no Site Completo e a partir de R$ 3.000 com sistema. O Essencial sai em até 6x no Pix, o Completo em até 10x e o sistema em até 15x, no Pix ou no cartão, com os juros do cartão por conta de quem parcela. O valor do sistema depende do que ele precisa fazer.</p></div>
           <div class="faq__item"><h3>A prévia é paga?</h3><p>Não. Eu monto uma prévia do seu site de graça e você decide se quer fechar.</p></div>
           <div class="faq__item"><h3>A manutenção é obrigatória?</h3><p>Não. Ela custa R$ 120 por mês ou R$ 1.200 no ano, e você cancela quando quiser.</p></div>
           <div class="faq__item"><h3>E o domínio .com.br?</h3><p>Vem junto da manutenção. Sem ela, o domínio custa cerca de R$ 40 por ano, pago por você.</p></div>
