@@ -68,6 +68,16 @@
   #trabalhos .panel { --p-h: 320px; }
   .hero__media { background: transparent; }
   footer .footer__col a { display: inline-block; padding-block: 6px; }
+  /* respiro menor entre as seções */
+  main > :is(section, .section):not(.hero) { padding-top: clamp(48px, 6vw, 88px) !important; padding-bottom: clamp(40px, 4vw, 56px) !important; }
+  @media (max-width: 767px) { main > .hero { padding-top: 88px !important; padding-bottom: 32px !important; height: auto !important; min-height: 0 !important; } }
+  /* topo: texto e imagem centralizados um em relação ao outro, sem sobra embaixo */
+  @media (min-width: 1024px) {
+    main > .hero.hero--split { height: auto !important; min-height: 0 !important; padding-bottom: var(--s-8); }
+    .hero--split .hero__grid { align-items: center; }
+    .hero--split .hero__text { align-self: center; }
+    .hero--split .hero__media { max-height: calc(100vh - var(--nav-h, 72px) - 64px); aspect-ratio: 1320 / 1500; width: auto; justify-self: end; }
+  }
   /* a imagem do topo no tamanho dela, com cantos arredondados de verdade (sem sobra em volta) */
   .hero--split .hero__media { height: auto; min-height: 0; flex: none; align-self: center; border-radius: var(--r-lg); box-shadow: 0 24px 60px rgba(40, 10, 14, .18); }
   .hero__media > img { position: static; display: block; width: 100%; height: auto; aspect-ratio: 1320 / 1500; object-fit: cover; }
