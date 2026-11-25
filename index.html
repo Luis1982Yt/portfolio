@@ -65,7 +65,11 @@
   @media (max-width: 1100px) { #servicos .card--plan .checks li { white-space: normal; } }
   #servicos .card--plan .price { margin: 0; }
   #servicos .extras { margin-top: var(--s-8, 48px); }
-  #trabalhos .panel { --p-h: 320px; }
+  #trabalhos .panel { --p-h: auto; height:auto !important; min-height:0 !important; }
+  #trabalhos .panel > .frame__img { position:static !important; display:block; width:100%; height:auto !important; aspect-ratio:16/10; object-fit:cover; object-position:top left; }
+  #trabalhos .card > h3 { min-height:2.6em; }
+  #trabalhos .card > p { min-height:3.2em; }
+  @media (max-width:1023px){ #trabalhos .card > h3, #trabalhos .card > p { min-height:0; } }
   .hero__media { background: transparent; }
   footer .footer__col a { display: inline-block; padding-block: 6px; }
   /* respiro menor entre as seções */
@@ -158,17 +162,23 @@
         <h2 id="trabalhos-h">Sites que eu fiz. <span class="muted">Do layout ao código, testados no celular.</span></h2>
       </div>
       <div class="grid">
-        <article class="card card--row card--open span-6">
+        <article class="card card--row card--open span-4">
           <h3>Apresenta o Confortize para instaladores</h3>
           <p>Site do Confortize, meu app de pedidos, orçamentos e agenda para quem instala câmeras e alarmes.</p>
           <div class="panel"><img width="1600" height="1100" class="frame__img" src="confortize-site.jpg" alt="Topo do site do Confortize com o teste grátis" loading="lazy"></div>
           <a class="link" href="https://confortosistemadeseguranca.com.br/">Abrir o site do Confortize</a>
         </article>
-        <article class="card card--row card--open span-6">
+        <article class="card card--row card--open span-4">
           <h3>Mostra os confrontos mais difíceis de cada campeão</h3>
           <p>BattleMatch, guia de matchups de League of Legends que montei e mantenho no ar.</p>
           <div class="panel"><img width="1100" height="683" class="frame__img" src="battlematch.jpg" alt="Tela do BattleMatch com a escolha de campeão e os confrontos mais difíceis" loading="lazy"></div>
           <a class="link" href="https://battlematch.vercel.app/">Abrir o BattleMatch</a>
+        </article>
+        <article class="card card--row card--open span-4">
+          <h3>Modelo de site para escritório de advocacia</h3>
+          <p>Áreas de atuação, especialidade, sócios e WhatsApp, com visual sóbrio e pronto para celular.</p>
+          <div class="panel"><img width="1200" height="750" class="frame__img" src="modelo-advocacia.jpg" alt="Topo do modelo de site para escritório de advocacia com as áreas de atuação" loading="lazy"></div>
+          <a class="link" href="/modelo-advocacia/">Ver o modelo para advogados</a>
         </article>
       </div>
     </div>
