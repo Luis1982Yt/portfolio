@@ -54,7 +54,15 @@
   /* the Confortize system's phone screenshot, whole on the surface (services-list's picture) */
   @media (min-width: 1024px) { #servicos { margin-top: var(--s-8); } }
   #servicos .plans { margin-top: var(--s-6); align-items: stretch; }
+  #servicos .plans { align-items: start; }
+  #servicos .plans > .card--plan { align-self: start; }
   #servicos .card--plan { display: flex; flex-direction: column; }
+  #servicos .card--plan .btn--secondary { display: flex; align-items: center; justify-content: center; min-height: 48px; border: 1.5px solid currentColor; border-radius: inherit; border-radius: var(--r-sm, 4px); background-image: none; text-decoration: none; }
+  #servicos .card--plan .btn--secondary:hover { background: color-mix(in oklab, currentColor 8%, transparent); }
+  #servicos .card--plan > p.muted:first-of-type { min-height: 3.2em; }
+  #servicos .card--plan .t-small { min-height: 1.6em; }
+  #servicos .card--plan .checks li { white-space: nowrap; }
+  @media (max-width: 1100px) { #servicos .card--plan .checks li { white-space: normal; } }
   #servicos .card--plan .price { margin: 0; }
   #servicos .extras { margin-top: var(--s-8, 48px); }
   #trabalhos .panel { --p-h: 320px; }
@@ -203,15 +211,15 @@
           <p class="price"><span class="t-stat">R$ 800</span></p>
           <p class="t-small muted">Em até 6x no Pix.</p>
           <a class="btn btn--secondary" href="https://wa.me/5551995837188?text=Oi%20Lu%C3%ADs%21%20Quero%20saber%20mais%20do%20Site%20Essencial.">Quero o Site Essencial</a>
-          <ul class="checks"><li>Uma página com serviços, fotos e avaliações</li><li>Botão do WhatsApp e mapa do endereço</li><li>Pronto pra celular e ligado ao perfil do Google</li><li>1 rodada de ajustes antes de ir pro ar</li></ul>
+          <ul class="checks"><li>Uma página com serviços e fotos</li><li>Botão do WhatsApp e mapa</li><li>Pronto pra celular e Google</li><li>1 rodada de ajustes</li></ul>
         </article>
         <article class="card card--plan span-4 is-featured">
           <h3>Site Completo <span class="badge">Recomendado</span></h3>
-          <p class="muted">Pra quem quer várias páginas, pedidos de orçamento e 3 meses sem se preocupar com nada.</p>
+          <p class="muted">Pra quem quer mais páginas e receber pedidos pelo site.</p>
           <p class="price"><span class="t-stat">R$ 1.600</span></p>
           <p class="t-small muted">Em até 6x no Pix.</p>
           <a class="btn btn--primary" href="https://wa.me/5551995837188?text=Oi%20Lu%C3%ADs%21%20Quero%20saber%20mais%20do%20Site%20Completo.">Quero o Site Completo</a>
-          <ul class="checks"><li>Tudo do Site Essencial</li><li>3 meses de manutenção grátis (vale R$&nbsp;360)</li><li>Domínio .com.br do primeiro ano incluso</li><li>E-mail profissional, tipo contato@seunegocio.com.br</li><li>Até 5 páginas: serviços, galeria, sobre e contato</li><li>Formulário de orçamento que chega no seu WhatsApp</li><li>Agendamento online, pra quem atende com horário marcado</li><li>QR Code pronto pra imprimir e deixar no balcão</li><li>Textos pensados pra aparecer nas buscas do Google</li><li>Entrega antes do Site Essencial e 3 rodadas de ajustes</li></ul>
+          <ul class="checks"><li>Tudo do Site Essencial</li><li>Até 5 páginas</li><li>Orçamento e agendamento pelo site</li><li>Domínio .com.br no 1º ano</li><li>E-mail profissional</li><li>3 meses de manutenção grátis</li><li>QR Code pro balcão</li><li>Entrega prioritária</li><li>3 rodadas de ajustes</li></ul>
         </article>
         <article class="card card--plan span-4">
           <h3>Site + Sistema</h3>
@@ -219,7 +227,7 @@
           <p class="price"><span class="muted">a partir de</span> <span class="t-stat">R$ 3.000</span></p>
           <p class="t-small muted">Valor final depende do que o sistema faz.</p>
           <a class="btn btn--secondary" href="https://wa.me/5551995837188?text=Oi%20Lu%C3%ADs%21%20Quero%20saber%20mais%20do%20Site%20%2B%20Sistema.">Quero o Site + Sistema</a>
-          <ul class="checks"><li>Tudo do Site Completo</li><li>Login pra você e sua equipe</li><li>Painel de pedidos, orçamentos, agenda ou clientes</li><li>Funciona no celular como um aplicativo</li><li>Feito sob medida pro seu negócio</li></ul>
+          <ul class="checks"><li>Tudo do Site Completo</li><li>Login pra você e a equipe</li><li>Painel de pedidos e clientes</li><li>Funciona como app no celular</li><li>Feito sob medida</li></ul>
         </article>
       </div>
       <ul class="rows extras">
