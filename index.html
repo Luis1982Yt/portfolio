@@ -47,9 +47,12 @@
 <link rel="modulepreload" href="assets/moments/word-highlight/moment.js">
 <!-- page CSS: only what sits inside a visual, and one --p-h per card group -->
 <style>
+  /* as seções crescem só até o conteúdo: sem telas inteiras vazias */
+  main > :is(section, .section):not(.hero, .section--hero, #confortize), footer.closing { height: auto !important; min-height: 0 !important; }
     #trabalhos .card p { color: var(--ink); }
   #trabalhos .panel .frame__img { object-position: 50% 0; }
   /* the Confortize system's phone screenshot, whole on the surface (services-list's picture) */
+  #servicos { margin-top: var(--s-8); }
   #servicos .plans { margin-top: var(--s-6); align-items: stretch; }
   #servicos .card--plan { display: flex; flex-direction: column; }
   #servicos .card--plan .price { margin: 0; }
@@ -126,7 +129,7 @@
         </div>
       </div>
       <div class="hero__media span-6 start-7">
-        <img width="1320" height="1500" src="confortize-hero.jpg" alt="App Confortize no celular: o pedido falado pelo instalador vira um formulário preenchido pela IA" style="--ly-pos: 50% 50%" fetchpriority="high" data-source="client" data-subject="site feito pelo Luís">
+        <img width="1320" height="1500" src="hero-previas.jpg" alt="Três prévias de sites feitas pelo Luís: uma vidraçaria no computador, uma serralheria e uma oficina no celular" style="--ly-pos: 50% 50%" fetchpriority="high" data-source="client" data-subject="sites feitos pelo Luís">
       </div>
     </div></div>
   </section>
